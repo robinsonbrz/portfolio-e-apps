@@ -30,4 +30,33 @@
         {% endfor %}
     </tbody>
     </table>
+    <nav>
+        <ul class="pagination">
+        {% if contatos.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+        {% endif %} 
+
+        {% for pagina in contatos.paginator.page_range %}
+            {% if contatos.number == pagina %}
+                <li class="page-item active">
+                    <a class="page-link" href="?page={{ pagina }}">{{ pagina }}</a>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ pagina }}">{{ pagina }}</a>
+                </li>
+            {% endif %}
+            
+        
+        
+        {% endfor %}
+          
+        {% if contatos.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ contatos.next_page_number }}">Next</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ contatos.paginator.num_pages }}">Last</a></li>
+        {% endif %}
+
+        </ul>
+      </nav>
 {%endblock conteudo%}

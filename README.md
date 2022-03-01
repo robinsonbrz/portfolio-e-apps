@@ -1,6 +1,31 @@
 ﻿<h1 align="left">Agenda de contatos em Django</h1>
-<br>
 <h2 align="left">Lista de contatos, telefones, e informações gerais</h2>
+<br>
+<div align="center">
+    <table>
+        </tr>
+            <td>
+                <a  href="https://www.linkedin.com/in/robinsonbrz/">
+                Adaptação e deploy por Robinson Enedino
+            </td>
+            <td>
+                <a  href="https://www.linkedin.com/in/robinsonbrz/">
+                <img src="https://raw.githubusercontent.com/robinsonbrz/robinsonbrz/main/static/img/linkedin.png" width="30" height="30">
+            </td>
+            <td>
+                <a  href="https://www.linkedin.com/in/robinsonbrz/">
+                <img  src="https://avatars.githubusercontent.com/u/18150643?s=96&amp;v=4" alt="@robinsonbrz" width="30" height="30">
+            </td>
+            <td>
+                <a href="mailto:robinsonbrz@gmail.com">
+                <img src="https://raw.githubusercontent.com/robinsonbrz/robinsonbrz/main/static/img/gmail.png" width="30" height="30" ></a>
+            </td>
+        </tr>
+    </table> 
+</div>
+
+
+
 <br><br>
 <h3 align="left">Linguagens e ferramentas utilizadas:</h3>
 <br>

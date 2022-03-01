@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 
@@ -5,13 +6,13 @@ from .models import Contato
 
 
 def index(request):
-    try: 
-        contatos = Contato.objects.all()
-        return render(request, 'contatos/index.html', {
-            'contatos': contatos
-        })
-    except:
-        raise Http404
+    contatos = Contato.objects.all()
+    paginator = Paginator(contatos, 25)  # Show 25 contacts per page.
+    page_number = request.GET.get('page')
+    contatos = paginator.get_page(page_number)
+    return render(request, 'contatos/index.html', {
+        'contatos': contatos,
+    })
 
 
 def ver_contato(request, contato_id):

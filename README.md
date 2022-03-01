@@ -42,7 +42,7 @@
                 <br /> Ubuntu Linux
             </td>			
             <td align="left" >
-                <img src="templates/static/img/git.png" width="100" height="100"/>
+                <img src="templates/static/img/git.png" width="100" height="100" href="https://www.linkedin.com/in/robinsonbrz/"/>
                 <br /> Git
             </td>
         </tr>

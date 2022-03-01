@@ -50,13 +50,13 @@
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<h2 align="left"> 
+<h3 align="left"> 
 	🚧  Projeto 🚀 Em construção...  🚧
-</h2>
+</h3>
 
 <br><br>
 
-<h2 align="left"> Features </h3>
+<h3 align="left"> Features </h3>
 
 <div align="left">
 - [x] Interface administrativa<br>

@@ -1,4 +1,5 @@
-﻿<h1 align="left">Agenda de contatos em Django</h1>
+﻿<div width="640" >
+<h1 align="left">Agenda de contatos em Django</h1>
 <h2 align="left">Lista de contatos, telefones, e informações gerais</h2>
 <br>
 <div align="center">
@@ -32,22 +33,22 @@
 <div align="left">
     <table align="left">
         <tr>
-            <td align=center >
+            <td align=center width="180">
                 <a  href="https://www.linkedin.com/in/robinsonbrz/">
-                <img src="https://raw.githubusercontent.com/robinsonbrz/robinsonbrz/main/static/img/empty.png" width="100" height="100"/>
+                <img src="https://raw.githubusercontent.com/robinsonbrz/robinsonbrz/main/static/img/empty.png" width="100" height="100" />
                 <br /> 
             </td>
-            <td align=center >
+            <td align=center width="180">
                 <a  href="https://www.linkedin.com/in/robinsonbrz/">
                 <img src="https://raw.githubusercontent.com/robinsonbrz/robinsonbrz/main/static/img/python.png" width="100" height="100"/>
                 <br /> Python
             </td>
-            <td align=center >
+            <td align=center width="180">
                 <a  href="https://www.linkedin.com/in/robinsonbrz/">
                 <img src="https://raw.githubusercontent.com/robinsonbrz/robinsonbrz/main/static/img/django2.png"  width="100" height="100"/>
                 <br /> Django
             </td>
-            <td align=center >
+            <td align=center width="180">
                 <a  href="https://www.linkedin.com/in/robinsonbrz/">
                 <img src="https://raw.githubusercontent.com/robinsonbrz/robinsonbrz/main/static/img/empty.png"  width="100" height="100"/>
                 <br />
@@ -165,5 +166,5 @@
 <br><br><br><br><br><br>
 
 S09-174Agenda
-
+</div>
 

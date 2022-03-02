@@ -51,6 +51,6 @@ def busca(request):
     paginator = Paginator(contatos, 15)  # Show 25 contacts per page.
     page_number = request.GET.get('page')
     contatos = paginator.get_page(page_number)
-    return render(request, 'contatos/index.html', {
+    return render(request, 'contatos/busca.html', {
         'contatos': contatos,
     })

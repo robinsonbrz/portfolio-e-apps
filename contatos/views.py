@@ -9,7 +9,6 @@ from .models import Contato
 
 
 def index(request):
-    
     contatos = Contato.objects.order_by('-id').filter(
         mostrar=True
     )
@@ -23,7 +22,7 @@ def index(request):
 
 def ver_contato(request, contato_id):
     contato = get_object_or_404(Contato, id=contato_id)
-    if not contato.mostrar:   # evita forçar páginas de número não permitidas mostrar
+    if not contato.mostrar:   # evita forçar páginas de número não permitidas mostrar  # noqa E501
         raise Http404()
 
     return render(request, 'contatos/ver_contato.html', {
@@ -32,7 +31,7 @@ def ver_contato(request, contato_id):
 
 
 def busca(request):
-    termo = request.GET.get('termo') 
+    termo = request.GET.get('termo')
     if termo is None or not termo:
         messages.add_message(
             request,
@@ -40,12 +39,12 @@ def busca(request):
             'Campo termo não pode ficar vazio.'
         )
         return redirect('index')
-    campos = Concat('nome', Value(' ') , 'sobrenome')
+    campos = Concat('nome', Value(' '), 'sobrenome')
 
     contatos = Contato.objects.annotate(
         nome_completo=campos
     ).filter(
-        Q(nome_completo__icontains=termo)|Q(telefone__icontains=termo)
+        Q(nome_completo__icontains=termo) | Q(telefone__icontains=termo)
      ).filter(
         mostrar=True
     )

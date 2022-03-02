@@ -4,7 +4,7 @@ from .models import Categoria, Contato
 
 
 class ContatoAdmin(admin.ModelAdmin):
-    list_display = ("id", "nome", "sobrenome", "telefone", "email", "data_criacao", "descricao", "categoria", "mostrar") # noqa E501
+    list_display = ("id", "nome", "sobrenome", "telefone", "email", "data_criacao", "descricao", "categoria", "mostrar", "foto") # noqa E501
     list_display_links = ("id", "nome", "sobrenome")
     # adiciona filtro area administrativa Contatos
     # list_filter = (["categoria"])
@@ -16,7 +16,7 @@ class ContatoAdmin(admin.ModelAdmin):
     search_fields = ("nome", "sobrenome", "telefone")
 
     # Permite a edição sem precisar entrar em detalhes
-    list_editable = ("telefone", "mostrar")
+    list_editable = ("telefone", "mostrar", "foto")
 
 
 admin.site.register(Categoria)

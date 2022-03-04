@@ -3,40 +3,25 @@
 {%block titulo%}{{contato.nome}} {{contato.sobrenome}} | {%endblock%}
 
 {%block conteudo%}
-
-<h1 class="mt-5">{{contato.nome}} {{contato.sobrenome}}</h1>
-
-{% if contato.foto %}
-<p>
-  <img src="{{ contato.foto.url }}" style="max-width: 250px; height: auto;">
-  </p>
-  {% else %}
-  <p>
-    <img src="./media/fotos/2022/03/sua_foto.jpg" style="max-width: 250px; height: auto;">
-  </p>
-  {% endif %}
-  
-  <dl>
-    
-  <dt>ID</dt>
-  <dd>{{contato.id}}</dd>
-
-  <dt>Telefone</dt>
-  <dd>{{contato.telefone}}</dd>
-  
-  <dt>E-mail</dt>
-  <dd>{{contato.email}}</dd>
-  
-  <dt>Data criação</dt>
-  <dd>{{contato.data_criacao|date:'d/m/Y H:i:s'}}</dd>
-  
-  <dt>Categoria</dt>
-  <dd>{{contato.categoria}}</dd>
-  
-  <dt>Descrição</dt>
-  <dd>
-      {{contato.descricao}}
-    </dd>
-  </dl>
-
+  <div class="card" style="width: 18rem;">
+    {% if contato.foto %}
+      <img src="{{ contato.foto.url }}" class="card-img-top rounded" >
+    {% else %}
+      <img src="/media/fotos/2022/03/sua_foto.jpg" style="max-width: 250px; height: auto;">
+    {% endif %}
+    <div class="card-body">
+      <h5 class="card-title">{{contato.nome}} {{contato.sobrenome}}</h5>
+      <p class="card-text">{{contato.descricao}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><Strong>Telefone</Strong></li>
+      <li class="list-group-item">{{contato.telefone}}</li>
+      <li class="list-group-item"><Strong>e-mail</Strong></li>
+      <li class="list-group-item">{{contato.email}}</li>
+      <li class="list-group-item"><Strong>Data cadastro</Strong></li>
+      <li class="list-group-item">{{contato.data_criacao|date:'d/m/Y H:i:s'}}</li>
+      <li class="list-group-item"><Strong>Categoria</Strong></li>
+      <li class="list-group-item">{{contato.categoria}}</li>
+    </ul>
+  </div>
 {%endblock conteudo%}

@@ -9,7 +9,7 @@ from .models import FormContato
 # Create your views here.
 
 
-def login(request):
+def lista_login(request):
     if request.method != 'POST':
         return render(request, 'accounts/login.html')
     usuario = request.POST.get('usuario')
@@ -25,14 +25,14 @@ def login(request):
     return redirect('add_contato')
 
 
-def logout(request):
+def lista_logout(request):
     auth.logout(request)
     return redirect('index')
 
 
-def cadastro(request):
+def lista_registro(request):
     if request.method != 'POST':
-        return render(request, 'accounts/cadastro.html')
+        return render(request, 'accounts/registro.html')
     nome = request.POST.get('nome')
     sobrenome = request.POST.get('sobrenome')
     email = request.POST.get('email')
@@ -42,33 +42,33 @@ def cadastro(request):
     if not nome or not sobrenome or not email or not usuario or not \
             senha or not senha2:
         messages.error(request, 'Nenhum campo pode estar vazio.')
-        return render(request, 'accounts/cadastro.html')
+        return render(request, 'accounts/registro.html')
 
     try:
         validate_email(email)
     except:
         messages.error(request, 'Email inválido.')
-        return render(request, 'accounts/cadastro.html')
+        return render(request, 'accounts/registro.html')
 
     if len(senha) < 6:
         messages.error(request, 'Senha precisa ter mais que 5 caracteres.')
-        return render(request, 'accounts/cadastro.html')
+        return render(request, 'accounts/registro.html')
 
     if len(usuario) < 6:
         messages.error(request, 'Usuario precisa ter mais que 5 caracteres.')
-        return render(request, 'accounts/cadastro.html')
+        return render(request, 'accounts/registro.html')
 
     if senha != senha2:
         messages.error(request, 'Senhas digitadas precisam ser iguais.')
-        return render(request, 'accounts/cadastro.html')
+        return render(request, 'accounts/registro.html')
 
     if User.objects.filter(username=usuario).exists():
         messages.error(request, 'Usuário já existe.')
-        return render(request, 'accounts/cadastro.html')
+        return render(request, 'accounts/registro.html')
 
     if User.objects.filter(email=email).exists():
         messages.error(request, 'Email já existe.')
-        return render(request, 'accounts/cadastro.html')
+        return render(request, 'accounts/registro.html')
 
     messages.success(request, 'Registrado com sucesso! Agora faça o login.')
 
@@ -76,13 +76,13 @@ def cadastro(request):
                                     password=senha, first_name=nome,
                                     last_name=sobrenome)
     user.save()
-    return redirect('login')
+    return redirect('lista_login')
     # messages.info(request, 'Nada postado.')
     # print(request.POST)
 
 
-@login_required(redirect_field_name='login')
-def add_contato(request):
+@login_required(redirect_field_name='lista_login')
+def lista_add_contato(request):
     if request.method != 'POST':
         form = FormContato()
         return render(request, 'accounts/add_contato.html', {'form': form})

@@ -27,7 +27,7 @@ def lista_login(request):
 
 def lista_logout(request):
     auth.logout(request)
-    return redirect('index')
+    return redirect('contatos:index')
 
 
 def lista_registro(request):
@@ -103,4 +103,4 @@ def lista_add_contato(request):
 
     form.save()
     messages.success(request, f'Contato {request.POST.get("nome")} salvo com sucesso!') # noqa e501
-    return redirect('accounts:add_contato')
+    return redirect('accounts:lista_add_contato')

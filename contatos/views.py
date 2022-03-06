@@ -38,7 +38,7 @@ def busca(request):
             messages.ERROR,
             'Campo termo não pode ficar vazio.'
         )
-        return redirect('index')
+        return redirect('contatos:index')
     campos = Concat('nome', Value(' '), 'sobrenome')
 
     contatos = Contato.objects.annotate(

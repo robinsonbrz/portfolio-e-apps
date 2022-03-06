@@ -8,7 +8,7 @@
 
 
   {% if not user.is_authenticated %}
-    <form method="POST" action="{% url 'lista_login' %}">
+    <form method="POST" action="{% url 'accounts:lista_login' %}">
       {% include 'parciais/_messages.html' %}
       {% csrf_token %}
       <div class="form-group">
@@ -26,7 +26,7 @@
       Usuário {{user.username}} está logado.
     </p>
     <p>
-      <a href="{% url 'lista_logout' %}">Clique aqui</a> para sair.
+      <a href="{% url 'accounts:lista_logout' %}">Clique aqui</a> para sair.
     </p>
 
   {% endif %}

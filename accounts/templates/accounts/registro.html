@@ -6,7 +6,7 @@
 {% block conteudo %}
 <h1 class="mt-3 mb-3">Cadastro de Usuário do Sistema</h1>
 
-<form method="POST" action="{% url 'lista_registro' %}">
+<form method="POST" action="{% url 'accounts:lista_registro' %}">
     {% include 'parciais/_messages.html' %}
     {% csrf_token %}
   <div class="form-group">

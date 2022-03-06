@@ -22,7 +22,7 @@ def lista_login(request):
     else:
         auth.login(request, user)
         messages.success(request, 'Logado com sucesso!')
-    return redirect('add_contato')
+    return redirect('accounts:lista_add_contato')
 
 
 def lista_logout(request):
@@ -76,12 +76,12 @@ def lista_registro(request):
                                     password=senha, first_name=nome,
                                     last_name=sobrenome)
     user.save()
-    return redirect('lista_login')
+    return redirect('accounts:lista_login')
     # messages.info(request, 'Nada postado.')
     # print(request.POST)
 
 
-@login_required(redirect_field_name='lista_login')
+@login_required(redirect_field_name='accounts:lista_login')
 def lista_add_contato(request):
     if request.method != 'POST':
         form = FormContato()
@@ -102,5 +102,5 @@ def lista_add_contato(request):
         return render(request, 'accounts/add_contato.html', {'form': form})
 
     form.save()
-    messages.success(request, f'Contato {request.POST.get("nome")} salvo com sucesso!')
-    return redirect('add_contato')
+    messages.success(request, f'Contato {request.POST.get("nome")} salvo com sucesso!') # noqa e501
+    return redirect('accounts:add_contato')

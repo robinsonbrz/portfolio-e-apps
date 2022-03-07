@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    path('', include('portapp.urls')),
     path('todoapp/', include('todoapp.urls')),
     path('lista/', include('contatos.urls')),
     path('lista/accounts/', include('accounts.urls')),

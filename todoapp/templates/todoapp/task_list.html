@@ -4,7 +4,16 @@
 <div class="header-bar">
     <div>
         <h1>Olá {{request.user|title}}</h1>
-        <h3 style="margin:0">Você tem <i>{{count}}</i>tarefas incompletas{{ count|pluralize:"s" }}</h3>
+        <h3 style="margin:0">Você tem <i>{{count}}</i> tarefas incompleta{{ count|pluralize:"s" }}</h3>
+
+<br>
+        <ul class="list-group">
+            <h3>Operações disponíves</h3>
+            <li class="list-group-item">Inserir novas tarefas</li>
+            <li class="list-group-item">Deletar tarefas</li>
+            <li class="list-group-item">Reordenar a fila de tarefas, arrastando</li>
+          </ul>
+
     </div>
 
     {% if request.user.is_authenticated %}

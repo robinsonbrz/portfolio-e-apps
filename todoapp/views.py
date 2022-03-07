@@ -1,4 +1,4 @@
-# from django.contrib.auth import login
+from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
@@ -16,6 +16,9 @@ from django.views.generic.list import ListView
 from .forms import PositionForm
 from .models import Task
 
+# def Vazia(request):
+#     return render(request,'todoapp/login.html')
+
 
 class CustomLoginView(LoginView):
     template_name = 'todoapp/login.html'
@@ -30,7 +33,7 @@ class RegisterPage(FormView):
     template_name = 'todoapp/register.html'
     form_class = UserCreationForm
     redirect_authenticated_user = True
-    success_url = reverse_lazy('tasks')
+    success_url = reverse_lazy('todoapp:tasks')
 
     def form_valid(self, form):
         user = form.save()
@@ -45,6 +48,7 @@ class RegisterPage(FormView):
 
 
 class TaskList(LoginRequiredMixin, ListView):
+    redirect_to = 'todoapp:login'
     model = Task
     context_object_name = 'tasks'
 
@@ -64,12 +68,14 @@ class TaskList(LoginRequiredMixin, ListView):
 
 
 class TaskDetail(LoginRequiredMixin, DetailView):
+    redirect_to = 'todoapp:login'
     model = Task
     context_object_name = 'task'
     template_name = 'todoapp/task.html'
 
 
 class TaskCreate(LoginRequiredMixin, CreateView):
+    redirect_to = 'todoapp:login'
     model = Task
     fields = ['title', 'description', 'complete']
     success_url = reverse_lazy('todoapp:tasks')
@@ -80,18 +86,22 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
+    redirect_to = 'todoapp:login'
     model = Task
     fields = ['title', 'description', 'complete']
     success_url = reverse_lazy('todoapp:tasks')
 
 
 class DeleteView(LoginRequiredMixin, DeleteView):
+    redirect_to = 'todoapp:login'
     model = Task
     context_object_name = 'task'
     success_url = reverse_lazy('todoapp:tasks')
+
     def get_queryset(self):
         owner = self.request.user
         return self.model.objects.filter(user=owner)
+
 
 class TaskReorder(View):
     def post(self, request):

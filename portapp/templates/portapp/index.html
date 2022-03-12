@@ -17,6 +17,17 @@
     <link rel="stylesheet" href="{% static '/portapp/css/magnific-popup.css'%}">
     <link rel="stylesheet" href="{% static '/portapp/vendors/nice-select/css/nice-select.css'%}">
     <link rel="stylesheet" href="{% static '/portapp/css/style.css'%}">
+    <style>
+        .shade-hover:hover {
+            background-color: #4758dc;
+            color: #eee;
+        }
+
+        .shade-hover {
+            border-radius: 10px;
+        }
+    </style>
+
 
 </head>
 
@@ -79,7 +90,7 @@
                         <div class="banner_content">
                             <h3 class="text-uppercase">OLÁ</h3>
                             <h1 class="text-uppercase">SOU ROBINSON ENEDINO</h1>
-                            <h5 class="text-uppercase">SOFTWARE ENGINEER</h5>
+                            <h5 class="text-uppercase">DESENVOLVEDOR DE SOFTWARE</h5>
                             <div class="d-flex align-items-center">
                                 <a class="primary_btn" href="index.html#"><span>ME CONTRATE</span></a>
                                 <a class="primary_btn tr-bg" href="index.html#"><span>CURRÍCULO</span></a>
@@ -134,63 +145,63 @@
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="single-brand-item d-table">
                                 <div class="d-table-cell text-center">
-                                    <img src="{% static '/portapp/img/brands/xlogo1.png'%}" alt="">
+                                    <img src="{% static '/portapp/img/brands/html-5.png'%}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="single-brand-item d-table">
                                 <div class="d-table-cell text-center">
-                                    <img src="{% static '/portapp/img/brands/xlogo2.png'%}" alt="">
+                                    <img src="{% static '/portapp/img/brands/css-3.png'%}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="single-brand-item d-table">
                                 <div class="d-table-cell text-center">
-                                    <img src="{% static '/portapp/img/brands/xlogo3.png'%}" alt="">
+                                    <img src="{% static '/portapp/img/brands/js.png'%}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="single-brand-item d-table">
                                 <div class="d-table-cell text-center">
-                                    <img src="{% static '/portapp/img/brands/xlogo4.png'%}" alt="">
+                                    <img src="{% static '/portapp/img/brands/django.png'%}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="single-brand-item d-table">
                                 <div class="d-table-cell text-center">
-                                    <img src="{% static '/portapp/img/brands/xlogo5.png'%}" alt="">
+                                    <img src="{% static '/portapp/img/brands/python.png'%}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="single-brand-item d-table">
                                 <div class="d-table-cell text-center">
-                                    <img src="{% static '/portapp/img/brands/xlogo6.png'%}" alt="">
+                                    <img src="{% static '/portapp/img/brands/bootstrap.png'%}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="single-brand-item d-table">
                                 <div class="d-table-cell text-center">
-                                    <img src="{% static '/portapp/img/brands/xlogo7.png'%}" alt="">
+                                    <img src="{% static '/portapp/img/brands/jquery.png'%}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="single-brand-item d-table">
                                 <div class="d-table-cell text-center">
-                                    <img src="{% static '/portapp/img/brands/xlogo8.png'%}" alt="">
+                                    <img src="{% static '/portapp/img/brands/visual_studio_code.png'%}" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="single-brand-item d-table">
                                 <div class="d-table-cell text-center">
-                                    <img src="{% static '/portapp/img/brands/xlogo9.png'%}" alt="">
+                                    <img src="{% static '/portapp/img/brands/react.png'%}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -209,11 +220,10 @@
 
 
 
-                            <div>
-                                <a class="smll" href="mailto:robinsonbrz@gmail.com" target="_blank" role="button"><i
-                                        class="fab fa-google  fa-3x"></i> e-mail</a>
-                                <a class="smll" href="mailto:robinsonbrz@gmail.com" target="_blank" role="button"><i
-                                        class="fa fa-envelope fa-3x "></i></a>
+                            <div  class="justify-content-center">
+                                <img src="{% static '/portapp/img/brands/gmail.png'%}" href="mailto:robinsonbrz@gmail.com" target="_blank" alt="">
+                                <a  href="mailto:robinsonbrz@gmail.com" target="_blank" role="button" margin=><i
+                                        class="fa fa-envelope fa-5x "></i></a>
                             </div>
 
                         </div>
@@ -704,11 +714,11 @@
                             Bearing Void gathering light light his eavening unto dont afraid.
                         </p>
                         <div class="subcribe-form" id="mc_embed_signup">
-                            <form target="_blank" novalidate action="./img/brand.png" class="subscription relative">
+                            <form target="_blank" novalidate action= {% static '/portapp/img/brand.png'%}"  class="subscription relative">
                                 <input name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = 'Email address'" required type="email">
                                 <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
+                                    <input name="rrr" tabindex="-1" value=""
                                         type="text">
                                 </div>
                                 <button class="primary-btn hover d-inline">Get Started</button>
@@ -757,22 +767,25 @@
     </footer>
 
     <script src="{% static '/portapp/js/jquery-3.2.1.min.js'%}"></script>
-    <script src="{% static '/portapp/js/popper.js'%}"></script>
-    <script src="{% static '/portapp/js/bootstrap.min.js'%}"></script>
+    <script  type="javascript"  src="{% static '/portapp/js/popper.js'%}"></script>
+    <script  type="javascript"  src="{% static '/portapp/js/bootstrap.min.js'%}"></script>
     <script src="{% static '/portapp/js/stellar.js'%}"></script>
+
     <script src="{% static '/portapp/js/jquery.magnific-popup.min.js'%}"></script>
-    <script src="{% static '/portapp/js/jquery.ajaxchimp.min.js'%}"></script>
-    <script src="{% static '/portapp/js/mail-script.js'%}"></script>
-    <script src="{% static '/portapp/js/gmaps.min.js'%}"></script>
-    <script src="{% static '/portapp/js/theme.js'%}"></script>
+    <script src="{% static '/portapp/vendors/nice-select/js/jquery.nice-select.min.js'%}"></script>
+    <script src="{% static '/portapp/vendors/isotope/isotope-min.js'%}"></script>
+    <script  type="javascript" src="{% static '/portapp/vendors/isotope/imagesloaded.pkgd.min.js'%}"></script>
+
 
     <script src="{% static '/portapp/vendors/owl-carousel/owl.carousel.min.js'%}"></script>
+    <script src="{% static '/portapp/js/jquery.ajaxchimp.min.js'%}"></script>
+    <script src="{% static '/portapp/js/mail-script.js'%}"></script>
+    <script   type="javascript" src="{% static '/portapp/js/gmaps.min.js'%}"></script>
+    
 
-    <script src="{% static '/portapp/vendors/nice-select/js/jquery.nice-select.min.js'%}"></script>
 
-    <script src="{% static '/portapp/vendors/isotope/imagesloaded.pkgd.min.js'%}"></script>
-    <script src="{% static '/portapp/vendors/isotope/isotope-min.js'%}"></script>
 
+    <script src="{% static '/portapp/js/theme.js'%}"></script>
 
 </body>
 

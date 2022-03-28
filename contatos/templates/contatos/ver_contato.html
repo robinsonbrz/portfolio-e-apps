@@ -3,7 +3,9 @@
 {%block titulo%}{{contato.nome}} {{contato.sobrenome}} | {%endblock%}
 
 {%block conteudo%}
-  <div class="card" style="width: 18rem;">
+
+<div class="col d-flex justify-content-center mb-3">
+  <div class="card centered" style="width: 14rem;">
     {% if contato.foto %}
       <img src="{{ contato.foto.url }}" class="card-img-top rounded" >
     {% else %}
@@ -23,5 +25,6 @@
       <li class="list-group-item"><Strong>Categoria</Strong></li>
       <li class="list-group-item">{{contato.categoria}}</li>
     </ul>
+  </div>
   </div>
 {%endblock conteudo%}

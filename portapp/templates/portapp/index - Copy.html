@@ -1,0 +1,653 @@
+{% extends 'base.html' %}
+{%block titulo%}{%endblock%}
+
+{%block conteudo%}
+
+
+
+
+
+
+
+{%endblock conteudo%}
+
+
+{% load static %}
+<!doctype html>
+<html lang="pt-Br">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="{% static '/portapp/img/favicon.png'%}" type="image/png">
+	<title>Robinson | Portfolio </title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{% static '/portapp/css/bootstrap.css'%}">
+	<link rel="stylesheet" href="{% static '/portapp/vendors/linericon/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<!--<link rel="stylesheet" href="{% static '/portapp/css/font-awesome.min.css'%}"> -->
+	<link rel="stylesheet" href="{% static '/portapp/vendors/owl-carousel/owl.carousel.min.css'%}">
+	<link rel="stylesheet" href="{% static '/portapp/css/magnific-popup.css'%}">
+	<link rel="stylesheet" href="{% static '/portapp/vendors/nice-select/css/nice-select.css'%}">
+	<!-- main css -->
+	<link rel="stylesheet" href="{% static '/portapp/css/style.css'%}">
+ 
+</head>
+
+<body>
+
+	<!--================ Start Header Area =================-->
+
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+
+                    <a class="navbar-brand logo_h" href="./"><img src="{% static '/portapp/img/brand.png'%}" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav justify-content-end">
+                            <li class="nav-item active"><a class="nav-link" href="./">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Serviços</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="./todoapp/" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="./lista/">Agenda App</a>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="./todoapp/">To Do App</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item submenu dropdown">
+                                <a href="index.html#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                    role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                            <!-- -->
+                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+							<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Pages</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+									<li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li>
+								</ul>
+							</li>
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Blog</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+								</ul>
+							</li>
+							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+	<!--================ End Header Area =================-->
+
+	<!--================ Start Home Banner Area =================-->
+    <section class="home_banner_area">
+        <div class="banner_inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="banner_content">
+                            <h3 class="text-uppercase">OLÁ</h3>
+                            <h1 class="text-uppercase">SOU ROBINSON ENEDINO</h1>
+                            <h5 class="text-uppercase">ENGENHEIRO DE COMPUTAÇÃO<br>DESENVOLVEDOR FULL STACK PYTHON</h5>
+                            <div>
+                                <a class="btn-outline-light btn-floating rounded-circle icon-socials" href="mailto:robinsonbrz@gmail.com" target="_blank" role="button">
+                                    <i class="fab fa-google fa-3x pr-5"  ></i>
+                                </a>
+                                <a class="btn-outline-light btn-floating rounded-circle icon-socials" href="https://www.linkedin.com/in/robinsonbrz" target="_blank" role="button">
+                                    <i class="fab fa-linkedin-in fa-3x p-5" ></i>
+                                </a>
+                                <a class=" btn-outline-light btn-floating rounded-circle icon-socials" href="https://github.com/robinsonbrz" target="_blank" role="button">
+                                    <i class="fab fa-github fa-3x p-5"  ></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="home_right_img">
+                            <img class="" src="{% static '/portapp/img/banner/home-right.png'%}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<!--================ End Home Banner Area =================-->
+
+	<!--================ Start About Us Area =================-->
+    <section class="about_area section_gap">
+        <div class="container">
+            <div class="row justify-content-start align-items-center">
+                <div class="col-lg-4">
+                    <div class="about_img">
+                        <img class="" src="{% static '/portapp/img/about-us.png'%}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="main_title text-left">
+                        <h2>DEIXE ME APRESENTAR</h2>
+                        <p>
+                            Sou o Robinson Enedino Bacharel, um Bacharel em Engenharia Elétrica de Computação.
+                            <br>
+                            Trabalho na solução de problemas de Tecnologia focado nas tecnologias Python, e o poderoso framework Django.
+                            <br>
+                            JavasCript com a biblioteca jQuery também são parte de minha bagagem de utilitários.
+                            <br>
+                            Atualmente focado em lapidar meus conhecimentos em Django, e atualizando minhas habilidades com novas tecnologias como Reacj, e Next Js.
+                        <br>
+                            Busco oportunidades para resolver problemas, criar algo novo com as melhores e mais promissoras tecnologias do mercado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<!--================ End About Us Area =================-->
+
+	<!--================ Srart Brand Area =================-->
+
+    <section class="brand_area section_gap_bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="{% static '/portapp/img/brands/html-5.png'%}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="{% static '/portapp/img/brands/css-3.png'%}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="{% static '/portapp/img/brands/js.png'%}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="{% static '/portapp/img/brands/django.png'%}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="{% static '/portapp/img/brands/python.png'%}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="{% static '/portapp/img/brands/bootstrap.png'%}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="{% static '/portapp/img/brands/jquery.png'%}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="{% static '/portapp/img/brands/visual_studio_code.png'%}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-brand-item d-table">
+                                <div class="d-table-cell text-center">
+                                    <img src="{% static '/portapp/img/brands/react.png'%}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offset-lg-2 col-lg-4 col-md-6">
+                    <div class="client-info">
+                        <div class="d-flex mb-50">
+                            <span class="lage">+15</span>
+                            <span class="smll">Anos de experiência em TI</span>
+                        </div>
+                        <div class="call-now d-flex">
+                            <div>
+
+                                <a href="mailto:robinsonbrz@gmail.com" target="_blank" role="button">
+                                    <img src="{% static '/portapp/img/brands/gmail.png'%}" width="90px" target="_blank" alt="">
+                                </a>
+                                <a href="mailto:robinsonbrz@gmail.com" target="_blank" role="button">
+                                    <span class="smll">meu e-mail</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<!--================ End Brand Area =================-->
+
+	<!--================ Start Features Area =================-->
+
+    <section class="features_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="main_title">
+                        <h2>novos desafios... novas soluções</h2>
+                        <p>
+                            O mercado de Tecnoligia está em constante atualização. E seus profissionais precisam estar sempre atualizados com as melhores ferramentas e processos.
+                            Para entregar softwarte de qualidade dentro de prazos realistas e com um custo cada vez mais espremidos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row feature_inner">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature_item">
+                        <img src="{% static '/portapp/img/services/s1.png'%}" alt="">
+                        <h4>Desenvolvimemto Web</h4>
+                        <p>Desenvolvimento e manutenção de aplicações Web.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature_item">
+                        <img src="{% static '/portapp/img/services/s2.png'%}" alt="">
+                        <h4>Trabalho em equipe</h4>
+                        <p>Trabalho em time, colaboração, entrosamento e comunicação.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature_item">
+                        <img src="{% static '/portapp/img/services/s3.png'%}" alt="">
+                        <h4>Prazo</h4>
+                        <p>Foco na meta, entendendo a necessidade do cliente. Solucionando com melhoria continua.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature_item">
+                        <img src="{% static '/portapp/img/services/s4.png'%}" alt="">
+                        <h4>Foco na entrega</h4>
+                        <p>Gerenciamendo projetos para garantir a entrega com qualidade dentro do prazo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<!--================ End Features Area =================-->
+
+	<!--================Start Portfolio Area =================-->
+	<section class="portfolio_area" id="portfolio">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title text-left">
+						<h2>quality work <br>
+							Recently done project </h2>
+					</div>
+				</div>
+			</div>
+			<div class="filters portfolio-filter">
+				<ul>
+					<li class="active" data-filter="*">all</li>
+					<li data-filter=".popular">popular</li>
+					<li data-filter=".latest"> latest</li>
+					<li data-filter=".following">following</li>
+					<li data-filter=".upcoming">upcoming</li>
+				</ul>
+			</div>
+
+			<div class="filters-content">
+				<div class="row portfolio-grid justify-content-center">
+					<div class="col-lg-4 col-md-6 all latest">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p1.jpg'%}" alt="">
+								<div class="overlay"></div>
+								<a href="portapp/img/portfolio/p1.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">minimal design</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all popular">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p2.jpg'%}" alt="">
+								<div class="overlay"></div>
+								<a href="portapp/img/portfolio/p2.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">Paint wall</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all latest">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p3.jpg'%}" alt="">
+								<div class="overlay"></div>
+								<a href="portapp/img/portfolio/p3.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">female light</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all popular">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p4.jpg'%}" alt="">
+								<div class="overlay"></div>
+								<a href="portapp/img/portfolio/p4.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">fourth air</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all following">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p6.jpg'%}" alt="">
+								<div class="overlay"></div>
+								<a href="portapp/img/portfolio/p5.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">together sign</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all upcoming">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p5.jpg'%}" alt="">
+								<div class="overlay"></div>
+								<a href="portapp/img/portfolio/p6.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">multiply fowl</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all upcoming following">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p7.jpg'%}" alt="">
+								<div class="overlay"></div>
+								<a href="portapp/img/portfolio/p7.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">green heaven</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all following">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p8.jpg'%}" alt="">
+								<div class="overlay"></div>
+								<a href="portapp/img/portfolio/p8.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>fly male</h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all upcoming">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p9.jpg'%}" alt="">
+								<div class="overlay"></div>
+								<a href="portapp/img/portfolio/p9.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">season face</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Portfolio Area =================-->
+
+	<!--================ Start Testimonial Area =================-->
+	<div class="testimonial_area section_gap_bottom">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<div class="main_title">
+						<h2>testemunhos</h2>
+						<p>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+                <div class="testi_slider owl-carousel">
+                    <div class="testi_item">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="{% static '/portapp/img/testimonials/***REMOVED***.jpg'%}"  width="130" alt="">
+							</div>
+							<div class="col-lg-8">
+                                <div class="testi_text">
+                                    <h4>***REMOVED***</h4>
+                                   <h5>Fundador e Diretor Geral na ***REMOVED***</h5>
+									<p>"Robinson liderou a implantação do ERP com visão sistêmica e abrangente de todo o processo. 
+                                        Demonstrou durante todo processo conhecimento de negócios e do fluxo de trabalho necessários para a implantação de um ERP. 
+                                        Possui alto nível de discernimento do que é plausível em tecnologia da informação e grau de comprometimento elevadíssimo para o sucesso dos trabalhos que gestiona." De LinkedIn.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+					
+					<div class="testi_item">
+						<div class="row">
+							<div class="col-lg-4">
+								<img src="portapp/img/testimonials/empty.jpg" alt="">
+							</div>
+							<div class="col-lg-8">
+								<div class="testi_text">
+									<h4>Anônimo</h4>
+									<p>O que você quer nem sempre é o que você precisa.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+			</div>
+			</div>
+		</div>
+	</div>
+	<!--================ End Testimonial Area =================-->
+
+	<!--================ Start Newsletter Area =================-->
+	<section class="newsletter_area">
+		<div class="container">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-lg-12">
+					<div class="subscription_box text-center">
+						<h2 class="text-uppercase text-white">get update from anywhere</h2>
+						<p class="text-white">
+							Bearing Void gathering light light his eavening unto dont afraid.
+						</p>
+						<div class="subcribe-form" id="mc_embed_signup">
+							<form target="_blank" novalidate="true"
+								action=""
+								method="get" class="subscription relative">
+								<input name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''"
+									onblur="this.placeholder = 'Email address'" required="" type="email">
+								<div style="position: absolute; left: -5000px;">
+									<input name="" tabindex="-1" value=""
+										type="text">
+								</div>
+								<button class="primary-btn hover d-inline">Get Started</button>
+								<div class="info"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Newsletter Area =================-->
+
+	<!--================Footer Area =================-->
+	<footer class="footer_area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-12">
+					<div class="footer_top flex-column">
+						<div class="footer_logo">
+							<a href="./">
+								<img src="{% static '/portapp/img/logo.png'%}" alt="">
+							</a>
+							
+						</div>
+						<div class="footer_social">
+                            <a class="btn btn-outline-light btn-floating mx-5 rounded-circle"
+                                href="mailto:robinsonbrz@gmail.com" target="_blank" role="button"><i
+                                    class="fab fa-google"></i></a>
+                            <a class="btn btn-outline-light btn-floating mx-5 rounded-circle"
+                                href="https://www.linkedin.com/in/robinsonbrz" target="_blank" role="button"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-floating mx-5 " href="https://github.com/robinsonbrz"
+                                target="_blank" role="button"><i class="fab fa-github"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row footer_bottom justify-content-center">
+				<p class="col-lg-8 col-sm-12 footer-text">
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					Copyright &copy;
+					<script>document.write(new Date().getFullYear());</script> Template  improved by <a href="./">Robinson Enedino</a>
+
+				</p>
+			</div>
+		</div>
+	</footer>
+	<!--================End Footer Area =================-->
+
+
+
+
+    
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="{% static '/portapp/js/jquery-3.2.1.min.js'%}"></script>
+	<script src="{% static '/portapp/js/popper.js'%}"></script>
+	<script src="{% static '/portapp/js/bootstrap.min.js'%}"></script>
+	<script src="{% static '/portapp/js/stellar.js'%}"></script>
+	<script src="{% static '/portapp/js/jquery.magnific-popup.min.js'%}"></script>
+	<script src="{% static '/portapp/vendors/nice-select/js/jquery.nice-select.min.js'%}"></script>
+	<script src="{% static '/portapp/vendors/isotope/imagesloaded.pkgd.min.js'%}"></script>
+	<script src="{% static '/portapp/vendors/isotope/isotope-min.js'%}"></script>
+	<script src="{% static '/portapp/vendors/owl-carousel/owl.carousel.min.js'%}"></script>
+	<script src="{% static '/portapp/js/jquery.ajaxchimp.min.js'%}"></script>
+	<script src="{% static '/portapp/js/mail-script.js'%}"></script>
+	<!--gmaps Js-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="{% static '/portapp/js/gmaps.min.js'%}"></script>
+	<script src="{% static '/portapp/js/theme.js'%}"></script>
+</body>
+
+</html>

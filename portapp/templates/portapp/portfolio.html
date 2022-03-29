@@ -1,0 +1,25 @@
+{% extends 'base_portapp.html' %}
+{% load static %}
+{%block titulo%}Portfólio | {%endblock%}
+
+{%block conteudo%}
+    <!--================ Start Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>Portfolio</h2>
+                    <div class="page_link">
+                        <a href="{% url 'portapp:inicio' %}">Início</a>
+                        <a href="{% url 'portapp:portfolio' %}">Portfólio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Banner Area =================-->
+
+	{% include 'parciais/_portfolio_geral.html' %}
+	{% include 'parciais/_newsletter.html' %}
+
+{%endblock conteudo%}

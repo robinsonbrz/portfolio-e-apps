@@ -1,0 +1,43 @@
+{% load static %}
+
+<!--================ Start Header Area =================-->
+
+<header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+
+                <a class="navbar-brand logo_h" href="{% url 'portapp:inicio' %}"><img src="{% static '/portapp/img/brand.png'%}" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav justify-content-end">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'portapp:inicio' %}">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'portapp:portfolio' %}">Portfólio</a></li>
+                        <li class="nav-item submenu dropdown">
+                            <a  class="nav-link dropdown-toggle" href="{% url 'portapp:portfolio' %}" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">Apps</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="{% url 'contatos:index' %}">Agenda App</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'todoapp:login' %}">To Do App</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'portapp:about' %}">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'portapp:expertise' %}">Expertise</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="{% url 'portapp:contato' %}">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!--================ End Header Area =================-->

@@ -1,5 +1,25 @@
 (function($) {
 	'use strict';
+	
+	
+	/*-------------------------------------------------------------------------------
+	  Navbar seleciona qual deve ser o nav class active - Robinson 03-03-2022
+	-------------------------------------------------------------------------------*/
+	$(".nav-item").each(function() {
+	// varre itens de nav e remove a classe active
+	  console.log($(this).removeClass("active"));
+	});
+
+	$(".nav-item").each(function() {
+	 // varre nav e procura qual ancora possui link igual ao titulo da pag atual
+	 // console.log($(this).children().text()); 
+	 // console.log($("title").text().replace(" | Robinson",""));
+		if ($(this).children().text() == $("title").text().replace(" | Robinson",""))  {
+			$(this).addClass("active")
+		}
+	});
+	
+	
 
 	var nav_offset_top = $('header').height() + 50;
 	/*-------------------------------------------------------------------------------

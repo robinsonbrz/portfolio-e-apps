@@ -1,6 +1,6 @@
 {% extends 'base_portapp.html' %}
 {% load static %}
-{%block titulo%}Portfólio | {%endblock%}
+{% block titulo %}Portfolio{% endblock titulo %}
 
 {%block conteudo%}
     <!--================ Start Banner Area =================-->
@@ -10,8 +10,8 @@
                 <div class="banner_content text-center">
                     <h2>Portfolio</h2>
                     <div class="page_link">
-                        <a href="{% url 'portapp:inicio' %}">Início</a>
-                        <a href="{% url 'portapp:portfolio' %}">Portfólio</a>
+                        <a href="{% url 'portapp:inicio' %}">Inicio</a>
+                        <a href="{% url 'portapp:portfolio' %}">Portfolio</a>
                     </div>
                 </div>
             </div>

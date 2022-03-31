@@ -4,34 +4,62 @@
 {%block conteudo%}
 
 
-    <h1 class="my-3 ">Lista de Telefone e Contatos</h1>
+    <h1 class="my-3 ">Lista de Contatos</h1>
 
-    <table class="table  table-striped table-borderless table-hover ">
+
+<!---->
+    <table class="table table-striped  align-middle mb-0 bg-white">
         <thead class="thead-dark">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Sobrenome</th>
-            <th scope="col">Telefone</th>
-            <th scope="col">Categoria</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for contato in contatos %}
-                <tr>
-                    <td>{{ contato.id }}</td>
-                    <td>
-                        <a href="{% url 'contatos:ver_contato' contato.id %}" class="link-dark" >{{ contato.nome }}</a>
-                    </td>
-                    <td>{{ contato.sobrenome }}</td>
-                    
-                    <td>{{ contato.telefone }}</td>
-                    <td>{{ contato.categoria }}</td>
+          <tr>
+            <th>Nome</th>
+            <th>Contatos</th>
+            <th>Categoria</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for contato in contatos %}
+          <tr>
+            <td>
+              <div class="d-flex align-items-center">
+                <a href="{% url 'contatos:ver_contato' contato.id %}" >
+                <img
+                    src=
+                    {% if contato.foto %}
+                      "{{ contato.foto.url }}"
+                    {% else %}
+                      "/media/fotos/2022/03/sua_foto.jpg"
+                    {% endif %}
+                    alt=""
+                    style="max-width: 35px; height: auto"
+                    class="rounded mr-3"
+                    />
+                </a>
+                <div class="ms-3">
+                    <a href="{% url 'contatos:ver_contato' contato.id %}" >
+                  <p class="fw-bold mb-1">{{ contato.nome }}</p>
+                  <p class="text-muted mb-0">{{ contato.sobrenome }}</p>
+                    </a>
 
-                </tr>
-        {% endfor %}
-    </tbody>
-    </table>
+                </div>
+            </div>
+        </td>
+        <td>
+            <p class="fw-normal mb-1">{{ contato.email }}</p>
+              <p class="fw-normal mb-1"><p class="text-muted mb-0">{{ contato.telefone }}</p>
+            </td>
+            <td>{{ contato.categoria }}</td>
+
+          </tr>
+         
+
+
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+<!---->
+
+<br>
     <nav>
         <ul class="pagination">
         {% if contatos.has_previous %}

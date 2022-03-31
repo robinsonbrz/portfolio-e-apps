@@ -4,27 +4,42 @@
 
 {%block conteudo%}
 
-<div class="col d-flex justify-content-center mb-3">
-  <div class="card centered" style="width: 14rem;">
-    {% if contato.foto %}
-      <img src="{{ contato.foto.url }}" class="card-img-top rounded" >
-    {% else %}
-      <img src="/media/fotos/2022/03/sua_foto.jpg" style="max-width: 250px; height: auto;">
-    {% endif %}
-    <div class="card-body">
-      <h5 class="card-title">{{contato.nome}} {{contato.sobrenome}}</h5>
-      <p class="card-text">{{contato.descricao}}</p>
+
+  <div class="card  mb-3" >
+    <div class="row g-0">
+      <div class="col-md-4">
+        {% if contato.foto %}
+          <img src="{{ contato.foto.url }}" class="card-img-top rounded img-fluid" >
+        {% else %}
+          <img src="/media/fotos/2022/03/sua_foto.jpg" class="img-fluid rounded" style="max-width: 200;">
+        {% endif %}
+
+
+      </div>
+      <div class="col-md-8">
+
+        
+          <div class="card-body">
+            <h5 class="card-title">{{contato.nome}} {{contato.sobrenome}}</h5>
+            <p class="card-text">{{contato.descricao}}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><Strong>Telefone</Strong></li>
+            <li class="list-group-item">{{contato.telefone}}</li>
+            <li class="list-group-item"><Strong>e-mail</Strong></li>
+            <li class="list-group-item">{{contato.email}}</li>
+            <li class="list-group-item"><Strong>Data cadastro</Strong></li>
+            <li class="list-group-item">{{contato.data_criacao|date:'d/m/Y H:i:s'}}</li>
+            <li class="list-group-item"><Strong>Categoria</Strong></li>
+            <li class="list-group-item">{{contato.categoria}}</li>
+          </ul>
+
+
+        </div>
+      </div>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><Strong>Telefone</Strong></li>
-      <li class="list-group-item">{{contato.telefone}}</li>
-      <li class="list-group-item"><Strong>e-mail</Strong></li>
-      <li class="list-group-item">{{contato.email}}</li>
-      <li class="list-group-item"><Strong>Data cadastro</Strong></li>
-      <li class="list-group-item">{{contato.data_criacao|date:'d/m/Y H:i:s'}}</li>
-      <li class="list-group-item"><Strong>Categoria</Strong></li>
-      <li class="list-group-item">{{contato.categoria}}</li>
-    </ul>
   </div>
-  </div>
+  <a class="btn btn-success m-3" href="{% url 'contatos:index' %}" role="button">Voltar</a>
+
+
 {%endblock conteudo%}

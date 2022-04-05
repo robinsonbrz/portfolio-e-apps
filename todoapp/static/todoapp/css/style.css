@@ -178,3 +178,22 @@ label {
 .card-body {
     padding: 20px;
 }
+
+.list-group-item {
+	background-color: #aeb6ff ;
+	border: 1px solid rgba(0,0,0,.0125);
+	
+}
+
+.footer_area .footer_social a i {
+  color: #788489;
+  font-size: 22px;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.footer_area .footer_bottom a {
+  color: #854fee;
+}

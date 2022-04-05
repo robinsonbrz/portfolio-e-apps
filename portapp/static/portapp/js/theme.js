@@ -7,7 +7,7 @@
 	-------------------------------------------------------------------------------*/
 	$(".nav-item").each(function() {
 	// varre itens de nav e remove a classe active
-	  console.log($(this).removeClass("active"));
+	  $(this).removeClass("active");
 	});
 
 	$(".nav-item").each(function() {

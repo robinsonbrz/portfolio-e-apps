@@ -327,6 +327,7 @@
 		});
 	}
 
+		// Somente em todo app  #######################
         // alert("carregado");
         $('#id_username').attr('autocomplete', 'off');
 
@@ -338,9 +339,6 @@
             $("#id_password").val("t3stU5er@");
             $( ".button" ).trigger('click');
         })
-
-
-
-
+		// Somente em todo app  #######################
 
 })(jQuery);

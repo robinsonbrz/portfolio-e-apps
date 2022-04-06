@@ -326,4 +326,21 @@
 			]
 		});
 	}
+
+        // alert("carregado");
+        $('#id_username').attr('autocomplete', 'off');
+
+        //$("#teste_btn").event.preventDefault();
+        $("#teste_btn").on('click', function () {
+            console.log("teste");
+
+            $("#id_username").val("testuser2");
+            $("#id_password").val("t3stU5er@");
+            $( ".button" ).trigger('click');
+        })
+
+
+
+
+
 })(jQuery);

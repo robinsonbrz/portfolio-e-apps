@@ -415,7 +415,7 @@
 
 			$.ajax({
 				type : "POST", // http method
-				url : "enviaemail/", // the endpoint
+				url : "ajxmail/", // the endpoint
 				data : { 
 					name    : nome    , 
 					email   : email   ,
@@ -432,10 +432,12 @@
 
 					//d-none" role="alert" id="alert-email"
 					alert("Obrigado " + nome + "! Sua mensagem foi enviada!");
+					/*
 					$('#name').val(''); // remove the value from the input
 					$('#email').val(''); 
 					$('#subject').val('');
 					$('#message').val('');
+					*/
 
 				},
 		

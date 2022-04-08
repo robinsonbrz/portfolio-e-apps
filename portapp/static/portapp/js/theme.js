@@ -342,11 +342,67 @@
 		// Somente em todo app  #######################
 
 
+		
+		
+		// validação de e-mail validate #######################
+		//Guarda o form em uma variável
+		var form = $("#contactForm");
+		$('#contactForm').validate({
+			// regras pode se colocar regra de required aqui ao invés de no HTML
+			// length também pode ser inserido aqui
+
+			rules: {
+				name: {
+					required: true,
+					minlength: 5
+				},
+				// valida se senha 1 é igual a senha 2
+				email: {
+					required: true
+				},
+				subject: {
+					required: true,
+					minlength: 15
+				},
+				// valida se senha 1 é igual a senha 2
+				message: {
+					required: true,
+					minlength: 20
+				}
+			},
+			// mensagens da validação 
+			messages: {
+				name: {
+					required: "Precisamos de seu nome para contato"
+					
+				},
+				email: {
+					required: "Campo email é necessário",
+					email: "Digite um email válido"
+				},
+				subject: {
+					required: "Breve descrição",
+					minlength: "no mínimo {0} caracteres"
+				},
+				message: {
+					required: "Descreva como posso te ajudar",
+					minlength: "no mínimo {0} caracteres"
+				}
+
+			}
+		})
+// validação de e-mail validate #######################
+
+
+
+
 		// envio de email ajax form inicial #######################
 		$('#contactForm').on('submit', function(event){
 			event.preventDefault();
 			//console.log("form submitted!")  // sanity check
-			create_post();
+			if (form.valid()) {
+				create_post();
+			};
 		});
 	
 		// AJAX for posting
@@ -369,11 +425,6 @@
 						}, // data sent with the post request
 				// handle a successful response
 				success : function(json) {
-					$('#name').val(''); // remove the value from the input
-					$('#email').val(''); 
-					$('#subject').val('');
-					$('#message').val('');
-
 					// console.log(json); // log the returned json to the console
 					// console.log("success"); // another sanity check
 					$("#alert-email").addClass("alert-success").removeClass("d-none").removeClass("alert-danger")
@@ -381,6 +432,11 @@
 
 					//d-none" role="alert" id="alert-email"
 					alert("Obrigado " + nome + "! Sua mensagem foi enviada!");
+					$('#name').val(''); // remove the value from the input
+					$('#email').val(''); 
+					$('#subject').val('');
+					$('#message').val('');
+
 				},
 		
 				// handle a non-successful response
@@ -402,9 +458,6 @@
 
 
 		// envio de email ajax #######################
-		
-
-
 
 
 

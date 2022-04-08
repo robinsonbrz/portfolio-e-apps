@@ -341,4 +341,72 @@
         })
 		// Somente em todo app  #######################
 
+
+		// envio de email ajax form inicial #######################
+		$('#contactForm').on('submit', function(event){
+			event.preventDefault();
+			//console.log("form submitted!")  // sanity check
+			create_post();
+		});
+	
+		// AJAX for posting
+		function create_post() {
+			//console.log("create post is working!") // sanity check
+			let nome    = $('#name').val();
+			let email   = $('#email').val();
+			let subject = $('#subject').val();
+			let message = $('#message').val();
+
+			$.ajax({
+				type : "POST", // http method
+				url : "enviaemail/", // the endpoint
+				data : { 
+					name    : nome    , 
+					email   : email   ,
+					subject : subject ,
+					message : message ,
+					csrfmiddlewaretoken : $('input[name = csrfmiddlewaretoken]').val(),
+						}, // data sent with the post request
+				// handle a successful response
+				success : function(json) {
+					$('#name').val(''); // remove the value from the input
+					$('#email').val(''); 
+					$('#subject').val('');
+					$('#message').val('');
+
+					// console.log(json); // log the returned json to the console
+					// console.log("success"); // another sanity check
+					$("#alert-email").addClass("alert-success").removeClass("d-none").removeClass("alert-danger")
+					$("#alert-email").html("Muito obrigado <b>" + nome + "</b> !<br>Breve você receberá uma resposta em: " + email+ ".");
+
+					//d-none" role="alert" id="alert-email"
+					alert("Obrigado " + nome + "! Sua mensagem foi enviada!");
+				},
+		
+				// handle a non-successful response
+				error : function(xhr,errmsg,err) {
+					$("#alert-email").addClass("alert-danger").removeClass("d-none").removeClass("alert-success")
+					$("#alert-email").html("Desculpe! <br>Erro no processamento! <br> Por favor, tente novamente mais tarde.")
+			
+					console.log("Erro apresentado: "+ err);
+					console.log("Erro apresentado: "+ errmsg);
+				}
+			});
+
+
+
+
+
+
+		};
+
+
+		// envio de email ajax #######################
+		
+
+
+
+
+
+
 })(jQuery);

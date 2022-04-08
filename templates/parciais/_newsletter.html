@@ -17,8 +17,10 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                    <form class="row contact_form" action="jqueryInterceptsPost" method="post" id="contactForm" novalidate="novalidate">
+                        {% csrf_token %}
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Entre seu nome">
@@ -39,8 +41,10 @@
                             <button type="submit" value="submit" class="primary_btn">
                                 <span>Envie sua Mensagem</span>
                             </button>
+                            <div class="alert mt-4 text-left d-none" role="alert" id="alert-email">
+                                This is a success alert—check it out!
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
-	<!--================ End Newsletter Area =================-->

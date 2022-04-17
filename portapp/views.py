@@ -21,6 +21,9 @@ def expertise(request):
 def portfolio(request):
     return render(request, 'portapp/portfolio.html')
 
+def portfolio_detail(request):
+    return render(request, 'portapp/portfolio-details.html')    
+
 
 def contato(request):
     return render(request, 'portapp/contato.html')

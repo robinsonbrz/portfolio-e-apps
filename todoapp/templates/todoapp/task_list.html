@@ -24,8 +24,8 @@
 
 <div id="search-add-wrapper">
     <form method="GET" style="display: flex;">
-        <input type='text' name='search-area' placeholder="Search your task" value="{{search_input}}">
-        <input class="button" type="submit" value='Search'>
+        <input type='text' name='search-area' placeholder="Pesquisar em tarefas" value="{{search_input}}">
+        <input class="button" type="submit" value='Pesquisa'>
     </form>
     {% if tasks|length > 0 %}
     <a id="add-link" href="{% url 'todoapp:task-create' %}">&#x2b;</a>

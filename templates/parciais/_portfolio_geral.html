@@ -5,8 +5,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="main_title text-left">
-						<h2>case studies <br>
-						implementados</h2>
+						<h2>Aplicativos <br>
+						implementados e demonstrações</h2>
 					</div>
 				</div>
 			</div>
@@ -23,6 +23,8 @@
 
 			<div class="filters-content">
 				<div class="row portfolio-grid justify-content-center">
+					<!--
+					
 					<div class="col-lg-4 col-md-6 all python jquery javascript bootstrap django">
 						<div class="portfolio_box">
 							<div class="single_portfolio">
@@ -45,7 +47,7 @@
 							<div class="single_portfolio">
 								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/todo_app.jpg'%}" alt="">
 								<div class="overlay"></div>
-								<a href="{% static '/portapp/img/portfolio/todo_app.jpg'%}" class="img-gal" title='<a class="nav-link" href="{% url 'portapp:about' %}">Link para a pagina do portfolio</a>'>
+								<a href="{% static '/portapp/img/portfolio/todo_app.jpg'%}" class="img-gal" title='<a class="nav-link" href="# ">Link para a pagina do portfolio</a>'>
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
@@ -62,7 +64,7 @@
 							<div class="single_portfolio">
 								<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p3.jpg'%}" alt="">
 								<div class="overlay"></div>
-								<a href="{% static '/portapp/img/portfolio/p3.jpg'%}" class="img-gal" title='<a class="nav-link" href="{% url 'portapp:about' %}">Link para a pagina do portfolio</a>'>
+								<a href="{% static '/portapp/img/portfolio/p3.jpg'%}" class="img-gal" title='<a class="nav-link" href="#">Link para a pagina do portfolio</a>'>
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
@@ -75,7 +77,31 @@
 							</div>
 						</div>
 					</div>
-				
+				-->
+
+					{% for aplicativo in aplicativos %}	
+
+						<div class="col-lg-4 col-md-6  all python jquery javascript bootstrap django">
+							<div class="portfolio_box">
+								<div class="single_portfolio">
+									<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p3.jpg'%}" alt="">
+									<div class="overlay"></div>
+									<a href="{% static '/portapp/img/portfolio/p3.jpg'%}" class="img-gal" title='<a class="nav-link" href="{{ aplicativo.get_absolute_url}}">{{ aplicativo.titulo}}</a>'>
+										<div class="icon">
+											<span class="lnr lnr-cross"></span>
+										</div>
+									</a>
+								</div>
+								 <div class="short_info">
+									<h4><a href="{{ aplicativo.get_absolute_url}}">{{ aplicativo.titulo}}</a></h4>
+									<p>{{ aplicativo.descricao }} </p>
+								</div>
+							</div>
+						</div>
+					
+
+					{% endfor %}
+
 				</div>
 			</div>
 		</div>

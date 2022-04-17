@@ -42,7 +42,7 @@ input {
     color: #fff;
     padding: 10px;
     border-radius: 5px 5px 0 0;
-    background: linear-gradient(90deg, #aeb6ff 0%, #aeb6ff 43%, #aeb6ff 100%);
+    background: linear-gradient(90deg, #854fee 0%, #854fee 43%, #854fee 100%);
 }
 
 .header-bar a {
@@ -180,7 +180,7 @@ label {
 }
 
 .list-group-item {
-	background-color: #aeb6ff ;
+	background-color: #5c2fb6 ;
 	border: 1px solid rgba(0,0,0,.0125);
 	
 }

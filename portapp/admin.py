@@ -1,3 +1,14 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import PortfolioDetail
+
+
+@admin.register(PortfolioDetail)
+class PortDetailAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'slug', 'descricao')
+    prepopulated_fields = {"slug":("titulo",)}
+
+
+# As duas linha abaixo cumprem a mesma tarefa ou decorator ou declarativa
+# @admin.register(PortfolioDetail)
+# admin.site.register(PortfolioDetail)

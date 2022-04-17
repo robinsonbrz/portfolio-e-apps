@@ -3,11 +3,14 @@ import os
 import smtplib
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+
+from .models import PortfolioDetail
 
 
 def inicio(request):
-    return render(request, 'portapp/index.html')
+    aplicativos = PortfolioDetail.objects.all()
+    return render(request, 'portapp/index.html', {'aplicativos': aplicativos})  # noqa E502
 
 
 def about(request):
@@ -19,10 +22,21 @@ def expertise(request):
 
 
 def portfolio(request):
-    return render(request, 'portapp/portfolio.html')
+    aplicativos = PortfolioDetail.objects.all()
+    print(f"\n\n\n\n\n\n\n{aplicativos[0].slug}")
+    return render(request, 'portapp/portfolio.html', {  'aplicativos': aplicativos}) # noqa E502 
 
-def portfolio_detail(request):
-    return render(request, 'portapp/portfolio-details.html')    
+
+def portfolio_detail(request, slug):
+    aplicativos = PortfolioDetail.objects.all()
+    aplicativo = get_object_or_404(PortfolioDetail, slug=slug)
+    '''
+    print(aplicativo)
+    '''
+    print(f"{slug}\n\n\n\n\n\n\n\nPort detail")
+    
+    return render(request, 'portapp/portfolio-details.html', {'aplicativo': aplicativo,    # noqa E502
+                                                             'aplicativos': aplicativos})  # noqa E502
 
 
 def contato(request):

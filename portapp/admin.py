@@ -5,7 +5,7 @@ from .models import PortfolioDetail
 
 @admin.register(PortfolioDetail)
 class PortDetailAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'slug', 'descricao')
+    list_display = ('id', 'titulo', 'slug', 'descricao')
     prepopulated_fields = {"slug":("titulo",)}
 
 

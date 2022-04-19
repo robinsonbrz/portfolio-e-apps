@@ -21,11 +21,11 @@ class PortfolioDetail(models.Model):
         Categoria, on_delete=models.SET_NULL, null=True, blank=True,
         default=None,
     )
-    # img_portfolio = models.ImageField(
-    #    upload_to='portapp/img/', blank=True, default='')
+    img_portfolio = models.ImageField(
+       upload_to='portapp/img/', blank=True, default='portapp/img/img-placeholder.webp')
 
-    # img_prev = models.ImageField(
-    #    upload_to='portapp/img/', blank=True, default='')
+    img_prev = models.ImageField(
+       upload_to='portapp/img/', blank=True, default='portapp/img/img-placeholder.jpg')
 
     def get_absolute_url(self):
         return reverse('portapp:portfolio_detail',  args=[self.slug])

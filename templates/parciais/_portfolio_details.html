@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="left_img">
-                            <img class="img-fluid" src="{% static '/portapp/img/portfolio/portfolio-details.jpg'%}" alt="">
+                            <img class="img-fluid"  src="{{ aplicativo.img_portfolio.url }}" alt="">
                         </div>
                     </div>
                     <div class="offset-lg-1 col-lg-5">
@@ -18,13 +18,19 @@
                             <p>
                                 {{ aplicativo.descricao}}
                             </p>
-                            <ul class="list">
-                                <li><span>Rating</span>: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                        class="fa fa-star"></i></li>
-                                <li><span>Client</span>: colorlib</li>
-                                <li><span>Website</span>: colorlib.com</li>
-                                <li><span>Completed</span>: 17 Aug 2018</li>
-                            </ul>
+                            <h5>
+                                Live Demo:
+                            </h5>
+                                <a class="nav-link" href="{{ aplicativo.link_demo|default:"#"}}"> {{ aplicativo.link_demo|default:"Live demo em breve" }}</a>
+                            <br>
+                            <h5>
+                                {% if aplicativo.link_github %}
+                                    Git Hub do Projeto:
+                                {% else %}
+                                    Git Hub Robinson:
+                              {% endif %}
+                            </h5>
+                                <a class="nav-link" href="{{ aplicativo.link_github|default:"https://github.com/robinsonbrz" }}">  {{ aplicativo.link_github |default:"Git do projeto em breve" }}</a></li>
                         </div>
                     </div>
                 </div>

@@ -77,6 +77,7 @@
 							</div>
 						</div>
 					</div>
+					{% static '/portapp/img/portfolio/p3.jpg'%}
 				-->
 
 					{% for aplicativo in aplicativos %}	
@@ -84,9 +85,9 @@
 						<div class="col-lg-4 col-md-6  all python jquery javascript bootstrap django">
 							<div class="portfolio_box">
 								<div class="single_portfolio">
-									<img class="img-fluid w-100" src="{% static '/portapp/img/portfolio/p3.jpg'%}" alt="">
+									<img class="img-fluid w-100" src="{{ aplicativo.img_prev.url }}" alt="">
 									<div class="overlay"></div>
-									<a href="{% static '/portapp/img/portfolio/p3.jpg'%}" class="img-gal" title='<a class="nav-link" href="{{ aplicativo.get_absolute_url}}">{{ aplicativo.titulo}}</a>'>
+									<a href="{{ aplicativo.img_prev.url }}" style="width:350;height:320" class="img-gal" title='<a class="nav-link" href="{{ aplicativo.get_absolute_url}}">{{ aplicativo.titulo}}</a>'>
 										<div class="icon">
 											<span class="lnr lnr-cross"></span>
 										</div>

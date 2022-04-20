@@ -31,7 +31,10 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #777777;
-  background: url(../img/body-bg.png) no-repeat center; }
+  background: url(../img/body_background.webp);
+  background-repeat: repeat;
+  background-position:right top;
+  }
 
 h1,
 h2,
@@ -84,19 +87,19 @@ button:focus {
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 .section_gap {
-  padding: 200px 0; }
+  padding: 130px 0; }
   @media (max-width: 1199px) {
     .section_gap {
       padding: 80px 0; } }
 
 .section_gap_top {
-  padding-top: 200px; }
+  padding-top: 130px; }
   @media (max-width: 1199px) {
     .section_gap_top {
       padding-top: 80px; } }
 
 .section_gap_bottom {
-  padding-bottom: 200px; }
+  padding-bottom: 130px; }
   @media (max-width: 1199px) {
     .section_gap_bottom {
       padding-bottom: 80px; } }
@@ -105,10 +108,10 @@ button:focus {
 ============================================================================================ */
 .main_title {
   text-align: center;
-  margin-bottom: 100px; }
+  margin-bottom: 20px; }
   @media (max-width: 1199px) {
     .main_title {
-      margin-bottom: 50px; } }
+      margin-bottom: 20px; } }
   .main_title h2 {
     font-size: 36px;
     font-weight: 700;
@@ -123,7 +126,7 @@ button:focus {
         font-size: 30px;
         line-height: 34px; } }
   .main_title p {
-    margin-bottom: 0px; }
+    margin-bottom: 20px; }
     @media (max-width: 991px) {
       .main_title p br {
         display: none; } }
@@ -2460,17 +2463,17 @@ h6 {
 /* Start Barand Area css
 ============================================================================================ */
 .brand_area {
-  padding-bottom: 170px; }
+  padding-bottom: 90px; }
   @media (max-width: 1199px) {
     .brand_area {
-      padding-bottom: 80px; } }
+      padding-bottom: 90px; } }
 
 /* End Barand Area css
 ============================================================================================ */
 /* Start Features Area css
 ============================================================================================ */
 .features_area {
-  padding-bottom: 170px; }
+  padding-bottom: 50px; }
   @media (max-width: 1199px) {
     .features_area {
       padding-bottom: 50px; } }
@@ -2609,10 +2612,10 @@ h6 {
 /* Start Portfolio Area css
 ============================================================================================ */
 .portfolio_area {
-  padding-bottom: 120px; }
+  padding-bottom: 20px; }
   @media (max-width: 991px) {
     .portfolio_area {
-      padding-bottom: 50px; } }
+      padding-bottom: 20px; } }
   .portfolio_area .filters ul {
     padding-left: 0;
     margin-bottom: 50px; }

@@ -21,16 +21,16 @@
                             <h5>
                                 Live Demo:
                             </h5>
-                                <a class="nav-link" href="{{ aplicativo.link_demo|default:"#"}}"> {{ aplicativo.link_demo|default:"Live demo em breve" }}</a>
+                                <a class="nav-link" href="{{ aplicativo.link_demo|default:"#"}}"> {{ aplicativo.link_demo | default:"Live demo em breve" }}</a>
                             <br>
                             <h5>
                                 {% if aplicativo.link_github %}
                                     Git Hub do Projeto:
                                 {% else %}
-                                    Git Hub Robinson:
+                                    Git Hub Robinson disponível:
                               {% endif %}
                             </h5>
-                                <a class="nav-link" href="{{ aplicativo.link_github|default:"https://github.com/robinsonbrz" }}">  {{ aplicativo.link_github |default:"Git do projeto em breve" }}</a></li>
+                                <a class="nav-link" href="{{ aplicativo.link_github|default:"https://github.com/robinsonbrz" }}">  {{ aplicativo.link_github | default:"Git do projeto em breve" }}</a></li>
                         </div>
                     </div>
                 </div>

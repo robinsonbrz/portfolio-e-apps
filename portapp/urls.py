@@ -1,5 +1,5 @@
 
-from django.urls import path, re_path
+from django.urls import path
 
 from . import views
 
@@ -10,6 +10,6 @@ urlpatterns = [
     path('expertise/', views.expertise, name='expertise'),
     path('portfolio/', views.portfolio, name='portfolio'),
     path('contato/', views.contato, name='contato'),
-    re_path(r'ajxmail/$', views.ajxmail, name='ajxmail'),
+    path('contato/ajxmail/', views.ajxmail, name='ajxmail'),
     path('<slug:slug>/$', views.portfolio_detail, name='portfolio_detail'), # noqa E501
 ]

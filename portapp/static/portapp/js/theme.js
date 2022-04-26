@@ -413,6 +413,7 @@
 			let subject = $('#subject').val();
 			let message = $('#message').val();
 
+
 			$.ajax({
 				type : "POST", // http method
 				url : "ajxmail/", // the endpoint
@@ -424,13 +425,13 @@
 					csrfmiddlewaretoken : $('input[name = csrfmiddlewaretoken]').val(),
 						}, // data sent with the post request
 				// handle a successful response
+				
 				success : function(json) {
-					// console.log(json); // log the returned json to the console
-					// console.log("success"); // another sanity check
+
 					$("#alert-email").addClass("alert-success").removeClass("d-none").removeClass("alert-danger")
 					$("#alert-email").html("Muito obrigado <b>" + nome + "</b> !<br>Breve você receberá uma resposta em: " + email+ ".");
 
-					//d-none" role="alert" id="alert-email"
+
 					alert("Obrigado " + nome + "! Sua mensagem foi enviada!");
 					
 					$('#name').val(''); // remove the value from the input
@@ -438,9 +439,8 @@
 					$('#subject').val('');
 					$('#message').val('');
 					
-
 				},
-		
+				
 				// handle a non-successful response
 				error : function(xhr,errmsg,err) {
 					$("#alert-email").addClass("alert-danger").removeClass("d-none").removeClass("alert-success")
@@ -448,6 +448,7 @@
 			
 					console.log("Erro apresentado: "+ err);
 					console.log("Erro apresentado: "+ errmsg);
+					
 				}
 			});
 

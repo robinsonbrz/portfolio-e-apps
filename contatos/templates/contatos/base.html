@@ -4,13 +4,13 @@
 
 <head>
   <title>{% block titulo %}{% endblock titulo %}Agenda</title>
-    {% include 'parciais/_HEAD.html' %}
-    <link rel="shortcut icon" type="image/png" href="{% static 'img/faviconEnedino.svg' %}"/>
+    {% include 'contatos/parciais/_head.html' %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'portapp/img/faviconEnedino.svg' %}"/>
 </head>
 
 <body>
 
-  {% include 'parciais/_nav.html' %}
+  {% include 'contatos/parciais/_nav.html' %}
 
   <div class="container">
     <div class="row">
@@ -24,7 +24,7 @@
                      id="search-input"
                      placeholder="Digite sua pesquisa"
                      name="termo">
-              {% include 'parciais/_messages.html'%}
+              {% include 'contatos/parciais/_messages.html'%}
             </div>
           </div>
         </form>
@@ -39,6 +39,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 <footer class="bg-dark static-top">
-  {% include 'parciais/_footer.html' %}
+  {% include 'contatos/parciais/_footer.html' %}
 </footer>
 </html>

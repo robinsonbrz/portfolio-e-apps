@@ -1,10 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'contatos/base.html' %}
 {% load bootstrap %}
 
 {%block titulo%}Adicionar | {%endblock%}
 
 {% block conteudo %}
-        {% include 'parciais/_messages.html' %}
+        {% include 'contatos/parciais/_messages.html' %}
     <div class="container">
         <h1>Adicionar contato a Lista de Telefones</h1>
         <form action="{%url 'accounts:lista_add_contato'%}" method="POST" enctype="multipart/form-data">

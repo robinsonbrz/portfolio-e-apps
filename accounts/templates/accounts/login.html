@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'contatos/base.html' %}
 
 {%block titulo%}Login | {%endblock%}
 
@@ -9,7 +9,7 @@
 
   {% if not user.is_authenticated %}
     <form method="POST" action="{% url 'accounts:lista_login' %}">
-      {% include 'parciais/_messages.html' %}
+      {% include 'contatos/parciais/_messages.html' %}
       {% csrf_token %}
       <div class="form-group">
         <label>Usuário</label>

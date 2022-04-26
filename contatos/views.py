@@ -15,7 +15,7 @@ def index(request):
     paginator = Paginator(contatos, 25)  # Show 25 contacts per page.
     page_number = request.GET.get('page')
     contatos = paginator.get_page(page_number)
-    return render(request, 'contatos/index.html', {
+    return render(request, 'contatos/pages/index.html', {
         'contatos': contatos,
     })
 
@@ -25,7 +25,7 @@ def ver_contato(request, contato_id):
     if not contato.mostrar:   # evita forçar páginas de número não permitidas mostrar  # noqa E501
         raise Http404()
 
-    return render(request, 'contatos/ver_contato.html', {
+    return render(request, 'contatos/pages/ver_contato.html', {
         'contato': contato
     })
 
@@ -51,6 +51,6 @@ def busca(request):
     paginator = Paginator(contatos, 15)  # Show 25 contacts per page.
     page_number = request.GET.get('page')
     contatos = paginator.get_page(page_number)
-    return render(request, 'contatos/busca.html', {
+    return render(request, 'contatos/pages/busca.html', {
         'contatos': contatos,
     })

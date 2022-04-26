@@ -23,7 +23,7 @@ def expertise(request):
 
 def portfolio(request):
     aplicativos = PortfolioDetail.objects.all()
-    print(f"\n\n\n\n\n\n\n{aplicativos[0].slug}")
+    # print(f"\n\n\n\n\n\n\n{aplicativos[0].slug}")
     return render(request, 'portapp/portfolio.html', {  'aplicativos': aplicativos}) # noqa E502 
 
 
@@ -33,7 +33,7 @@ def portfolio_detail(request, slug):
     '''
     print(aplicativo)
     '''
-    print(f"{slug}\n\n\n\n\n\n\n\nPort detail")
+    # print(f"{slug}\n\n\n\n\n\n\n\nPort detail")
     
     return render(request, 'portapp/portfolio-details.html', {'aplicativo': aplicativo,    # noqa E502
                                                              'aplicativos': aplicativos})  # noqa E502

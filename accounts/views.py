@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.core.validators import validate_email
 from django.shortcuts import redirect, render
 
-from .models import FormContato
+from accounts.models import FormContato
 
 # Create your views here.
 

@@ -54,3 +54,15 @@ def busca(request):
     return render(request, 'contatos/pages/busca.html', {
         'contatos': contatos,
     })
+
+
+def deleta_contato(request, contato_id):
+    contato_apagar = Contato.objects.get(id=contato_id)
+    nome = contato_apagar.nome
+    contato_apagar.delete()
+    messages.add_message(
+            request,
+            messages.SUCCESS,
+            'Contato: ' + nome + ' apagado com sucesso!'
+        )
+    return redirect('contatos:index')

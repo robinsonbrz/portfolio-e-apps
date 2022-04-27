@@ -41,5 +41,13 @@
   </div>
   <a class="btn btn-success m-3" href="{% url 'contatos:index' %}" role="button">Voltar</a>
 
+  {% if  user.user.is_staff %}
+
+      <a class="btn btn-danger m-3" href="{% url 'contatos:deleta-contato' contato.id %}" id="btn-deletacontato" role="button">Apagar contato</a>
+  {% else %}
+      <a class="btn btn-warning m-3 " href="#"  id="btn-deletacontato-off" role="button">Apagar Contato</a>
+
+  {% endif%}
+
 
 {%endblock conteudo%}

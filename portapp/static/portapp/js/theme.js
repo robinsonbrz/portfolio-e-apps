@@ -347,7 +347,7 @@
 		// validação de e-mail validate #######################
 		//Guarda o form em uma variável
 		var form = $("#contactForm");
-		$('#contactForm').validate({
+		$('#contactFormZZZZ').validate({
 			// regras pode se colocar regra de required aqui ao invés de no HTML
 			// length também pode ser inserido aqui
 
@@ -412,7 +412,12 @@
 			let email   = $('#email').val();
 			let subject = $('#subject').val();
 			let message = $('#message').val();
+			let captcha_response = grecaptcha.getResponse();
 
+			if (captcha_response == '') {
+				alert("Por favor, responda se não é robô.");
+				return;
+			}
 
 			$.ajax({
 				type : "POST", // http method
@@ -422,7 +427,9 @@
 					email   : email   ,
 					subject : subject ,
 					message : message ,
+					g_recaptcha_response: captcha_response,
 					csrfmiddlewaretoken : $('input[name = csrfmiddlewaretoken]').val(),
+					
 						}, // data sent with the post request
 				// handle a successful response
 				
@@ -444,10 +451,11 @@
 				// handle a non-successful response
 				error : function(xhr,errmsg,err) {
 					$("#alert-email").addClass("alert-danger").removeClass("d-none").removeClass("alert-success")
-					$("#alert-email").html("Desculpe! <br>Erro no processamento! <br> Por favor, tente novamente mais tarde.")
+					$("#alert-email").html("Desculpe! <br>Erro no processamento! <br>")
 			
 					console.log("Erro apresentado: "+ err);
 					console.log("Erro apresentado: "+ errmsg);
+
 					
 				}
 			});

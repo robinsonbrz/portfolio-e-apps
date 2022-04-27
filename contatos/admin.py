@@ -4,7 +4,7 @@ from .models import Categoria, Contato
 
 
 class ContatoAdmin(admin.ModelAdmin):
-    list_display = ("id", "nome", "sobrenome", "telefone", "email", "data_criacao", "descricao", "categoria", "mostrar", "foto") # noqa E501
+    list_display = ("id", "nome", "sobrenome", "telefone", "email", "data_criacao", "categoria", "mostrar", "foto") # noqa E501
     list_display_links = ("id", "nome", "sobrenome")
     # adiciona filtro area administrativa Contatos
     # list_filter = (["categoria"])

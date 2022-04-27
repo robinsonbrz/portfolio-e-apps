@@ -2,7 +2,8 @@ import email.message
 import os
 import smtplib
 
-from django.http import HttpResponse
+import requests
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
 
 from .models import PortfolioDetail
@@ -44,11 +45,38 @@ def contato(request):
 
 
 def ajxmail(request):
+    # token recaptcha
+    g_recaptcha_response = request.POST["g_recaptcha_response"]
+    print("\n\n\n\n" + g_recaptcha_response +"\n\n\n\n" )
+
+    # verificar se o recaptcha está vazio mesmo depois do javascript
+
+    recaptcha_request = requests.post(
+        'https://www.google.com/recaptcha/api/siteverify',
+        data={
+            'secret': '6Lc3XKYfAAAAAIOb5iQ2YWR2nEGbOdVt4phqSaLx',
+            'response': g_recaptcha_response,
+        }
+    )
+    recaptcha_result = recaptcha_request.json()
+    print(recaptcha_result)
+
+    if not recaptcha_result.get('success'):
+        response = JsonResponse({"error": "Erro na validação do recaptcha!"})
+        response.status_code = 403  # To announce that the user isn't allowed to publish
+        return response
+
+    # self.add_error(
+    #     'comentario',
+    #     'Desculpe Mr. Robot, ocorreu um erro.'
+    # )
+
+
     name = request.POST["name"]
     email_contato = request.POST["email"]
     subject = request.POST["subject"]
     message = request.POST["message"]
-    print(name, email, subject, message, "Antes chamada email")
+    # print(name, email, subject, message, "Antes chamada email")
     envia_email(name, email_contato, subject, message)
     return HttpResponse('OK')
 

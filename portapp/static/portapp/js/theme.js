@@ -347,7 +347,7 @@
 		// validação de e-mail validate #######################
 		//Guarda o form em uma variável
 		var form = $("#contactForm");
-		$('#contactFormZZZZ').validate({
+		$('#contactForm').validate({
 			// regras pode se colocar regra de required aqui ao invés de no HTML
 			// length também pode ser inserido aqui
 

@@ -5,8 +5,11 @@ import smtplib
 import requests
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
+from dotenv import load_dotenv
 
 from .models import PortfolioDetail
+
+load_dotenv()
 
 
 def inicio(request):
@@ -35,7 +38,7 @@ def portfolio_detail(request, slug):
     print(aplicativo)
     '''
     # print(f"{slug}\n\n\n\n\n\n\n\nPort detail")
-    
+
     return render(request, 'portapp/portfolio-details.html', {'aplicativo': aplicativo,    # noqa E502
                                                              'aplicativos': aplicativos})  # noqa E502
 
@@ -47,14 +50,11 @@ def contato(request):
 def ajxmail(request):
     # token recaptcha
     g_recaptcha_response = request.POST["g_recaptcha_response"]
-    print("\n\n\n\n" + g_recaptcha_response +"\n\n\n\n" )
-
-    # verificar se o recaptcha está vazio mesmo depois do javascript
 
     recaptcha_request = requests.post(
         'https://www.google.com/recaptcha/api/siteverify',
         data={
-            'secret': '6Lc3XKYfAAAAAIOb5iQ2YWR2nEGbOdVt4phqSaLx',
+            'secret': os.getenv('RECAPTCHA_KEY'),
             'response': g_recaptcha_response,
         }
     )

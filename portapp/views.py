@@ -14,7 +14,7 @@ load_dotenv()
 
 def inicio(request):
     aplicativos = PortfolioDetail.objects.all()
-    return render(request, 'portapp/index.html', {'aplicativos': aplicativos})  # noqa E502
+    return render(request, 'portapp/index.html', {'aplicativos': aplicativos})
 
 
 def about(request):
@@ -33,7 +33,7 @@ def portfolio(request):
 
 def portfolio_detail(request, slug):
     aplicativos = PortfolioDetail.objects.all()
-    aplicativo = get_object_or_404(PortfolioDetail, slug=slug)
+    aplicativo  = get_object_or_404(PortfolioDetail, slug=slug)
     '''
     print(aplicativo)
     '''
@@ -62,8 +62,8 @@ def ajxmail(request):
     print(recaptcha_result)
 
     if not recaptcha_result.get('success'):
-        response = JsonResponse({"error": "Erro na validação do recaptcha!"})
-        response.status_code = 403  # To announce that the user isn't allowed to publish
+        response                = JsonResponse({"error": "Erro na validação do recaptcha!"})
+        response.status_code    = 403  # To announce that the user isn't allowed to publish
         return response
 
     # self.add_error(
@@ -71,11 +71,10 @@ def ajxmail(request):
     #     'Desculpe Mr. Robot, ocorreu um erro.'
     # )
 
-
-    name = request.POST["name"]
-    email_contato = request.POST["email"]
-    subject = request.POST["subject"]
-    message = request.POST["message"]
+    name            = request.POST["name"]
+    email_contato   = request.POST["email"]
+    subject         = request.POST["subject"]
+    message         = request.POST["message"]
     # print(name, email, subject, message, "Antes chamada email")
     envia_email(name, email_contato, subject, message)
     return HttpResponse('OK')
@@ -96,12 +95,12 @@ def envia_email(name, email_contato, subject, message):
         <p><b>Robinson Enedino</b></p>
         <p>Enedino.com.br</p>
     """
-    msg = email.message.Message()
-    msg['Subject'] = f"Enedino.com.br - {name} - {subject}"
-    msg['From'] = "robinsonbrz@gmail.com"
-    # msg['To'] = 'robinsonbrz@gmail.com'
-    msg['To'] = f'{email_contato}, robinsonbrz@gmail.com'
-    GMAIL_PASSWORD = os.environ.get('GMAIL_PASSWORD', 'INSECURE')
+    msg             = email.message.Message()
+    msg['Subject']  = f"Enedino.com.br - {name} - {subject}"
+    msg['From']     = "robinsonbrz@gmail.com"
+    # msg['To']     = 'robinsonbrz@gmail.com'
+    msg['To']       = f'{email_contato}, robinsonbrz@gmail.com'
+    GMAIL_PASSWORD  = os.environ.get('GMAIL_PASSWORD', 'INSECURE')
     msg.add_header('Content-Type', 'text/html')
     msg.set_payload(corpo_email)
 

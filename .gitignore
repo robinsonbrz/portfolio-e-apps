@@ -131,3 +131,6 @@ dmypy.json
 
 */settings.py
 utils/
+
+gunicorn-error-log
+static/

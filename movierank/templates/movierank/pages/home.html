@@ -1,0 +1,54 @@
+{% extends 'movierank/base.html' %}
+
+{% block content %}
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h1 class="display-4">Rank de Filmes IMDb </h1>
+    <p class="lead">Filmes mais populares em pesquisa dos usuários IMDb atualizada em {{format_date}}</p>
+  </div>
+</div>
+
+
+<div class="container">
+
+ <!---->
+ <table class="table table-striped  align-middle mb-0 bg-white">
+  <thead class="thead-dark">
+    <tr>
+      <th></th>
+      <th class="h3">Título</th>
+      <th class="h3">Posição 
+        <a href="https://www.imdb.com/chart/moviemeter/">
+          <img class="pri_image" src="https://m.media-amazon.com/images/G/01/IMDb/BG_rectangle._CB1509060989_SY230_SX307_AL_.png" alt="imdb logo"
+        style="max-width: 70px;">
+        </a>
+        
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for movie in movies %}
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img src={{ movie.image }} alt={{movie.title }} style="max-width: 35px; height: auto" class="rounded mr-3"> 
+        </div>
+      </td>
+      <td>
+          <div class="ms-3">
+            <p class="fw-bold m-1 h4 align-middle">{{ movie.title }}</p>
+          </div>
+      </td>
+      <td>
+          <p class="fw-normal m-1 h4 text-center align-middle">{{ movie.number }}º</p>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<!---->
+
+</div>
+{% endblock %}

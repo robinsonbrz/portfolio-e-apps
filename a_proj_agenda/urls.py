@@ -20,6 +20,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('', include('portapp.urls')),
+    path('movierank', include('movierank.urls')),
     path('todoapp/', include('todoapp.urls')),
     path('lista/', include('contatos.urls')),
     path('lista/accounts/', include('accounts.urls')),

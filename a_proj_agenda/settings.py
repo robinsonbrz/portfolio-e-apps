@@ -18,7 +18,9 @@ from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 load_dotenv()
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,8 +33,15 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.environ.get('DEBUG') == '1' else False
 
+# ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
+print("\n\n\n\n\n\n\n\n\n\n")
+print(ALLOWED_HOSTS[0])
+print(ALLOWED_HOSTS[1])
+
+print("\n\n\n\n\n\n\n\n\n\n")
 
 # Application definition
 

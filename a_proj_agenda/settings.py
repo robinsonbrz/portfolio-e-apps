@@ -34,14 +34,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True if os.environ.get('DEBUG') == '1' else False
 
 # ALLOWED_HOSTS = ['*']
-
-
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
-print("\n\n\n\n\n\n\n\n\n\n")
-print(ALLOWED_HOSTS[0])
-print(ALLOWED_HOSTS[1])
 
-print("\n\n\n\n\n\n\n\n\n\n")
 
 # Application definition
 

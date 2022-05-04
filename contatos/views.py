@@ -45,7 +45,7 @@ def busca(request):
         nome_completo=campos
     ).filter(
         Q(nome_completo__icontains=termo) | Q(telefone__icontains=termo)
-     ).filter(
+    ).filter(
         mostrar=True
     )
     paginator = Paginator(contatos, 15)  # Show 25 contacts per page.
@@ -61,8 +61,8 @@ def deleta_contato(request, contato_id):
     nome = contato_apagar.nome
     contato_apagar.delete()
     messages.add_message(
-            request,
-            messages.SUCCESS,
-            'Contato: ' + nome + ' apagado com sucesso!'
-        )
+        request,
+        messages.SUCCESS,
+        'Contato: ' + nome + ' apagado com sucesso!'
+    )
     return redirect('contatos:index')

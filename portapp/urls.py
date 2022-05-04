@@ -11,5 +11,5 @@ urlpatterns = [
     path('portfolio/', views.portfolio, name='portfolio'),
     path('contato/', views.contato, name='contato'),
     path('contato/ajxmail/', views.ajxmail, name='ajxmail'),
-    path('<slug:slug>/$', views.portfolio_detail, name='portfolio_detail'), # noqa E501
+    path('<slug:slug>/$', views.portfolio_detail, name='portfolio_detail'),
 ]

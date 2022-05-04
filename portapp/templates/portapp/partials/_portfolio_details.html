@@ -1,42 +1,40 @@
 {% load static %}
 
-
-
-	<!--================Start Portfolio Details Area =================-->
-	<section class="portfolio_details_area section_gap">
-        <div class="container">
-            <div class="portfolio_details_inner">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="left_img">
-                            <img class="img-fluid"  src="{{ aplicativo.img_portfolio.url }}" alt="">
-                        </div>
-                    </div>
-                    <div class="offset-lg-1 col-lg-5">
-                        <div class="portfolio_right_text mt-30">
-                            <h4 class="text-uppercase">{{ aplicativo.titulo}}</h4>
-                            <p>
-                                {{ aplicativo.descricao}}
-                            </p>
-                            <h5>
-                                Live Demo:
-                            </h5>
-                                <a class="nav-link" href="{{ aplicativo.link_demo|default:"#"}}"> {{ aplicativo.link_demo | default:"Live demo em breve" }}</a>
-                            <br>
-                            <h5>
-                                {% if aplicativo.link_github %}
-                                    Git Hub do Projeto:
-                                {% else %}
-                                    Git Hub Robinson disponível:
-                              {% endif %}
-                            </h5>
-                                <a class="nav-link" href="{{ aplicativo.link_github|default:"https://github.com/robinsonbrz" }}">  {{ aplicativo.link_github | default:"Git do projeto em breve" }}</a></li>
-                        </div>
-                    </div>
-                </div>
-                {{ aplicativo.detalhe}}
+<!--================Start Portfolio Details Area =================-->
+<section class="portfolio_details_area section_gap">
+   <div class="container">
+      <div class="portfolio_details_inner">
+         <div class="row">
+            <div class="col-lg-6">
+               <div class="left_img">
+                  <img class="img-fluid" src="{{ aplicativo.img_portfolio.url }}" alt="">
+               </div>
             </div>
-        </div>
-    </section>
-    <!--================End Portfolio Details Area =================-->
-    
+            <div class="offset-lg-1 col-lg-5">
+               <div class="portfolio_right_text mt-30">
+                  <h4 class="text-uppercase">{{ aplicativo.titulo}}</h4>
+                  <p>
+                     {{ aplicativo.descricao}}
+                  </p>
+                  <h5>Live Demo:</h5>
+                  <a class="nav-link" href="{{ aplicativo.link_demo|default:"#"}}">
+                     {{ aplicativo.link_demo | default:"Live demo em breve" }}</a>
+                  <br>
+                  <h5>
+                     {% if aplicativo.link_github %}
+                        Git Hub do Projeto:
+                     {% else %}
+                        Git Hub Robinson disponível:
+                     {% endif %}
+                  </h5>
+                  <a class="nav-link" href="{{ aplicativo.link_github|default:"https://github.com/robinsonbrz" }}">
+                     {{ aplicativo.link_github | default:"Git do projeto em breve" }}
+                  </a>
+               </div>
+            </div>
+         </div>
+         {{ aplicativo.detalhe}}
+      </div>
+   </div>
+</section>
+<!--================End Portfolio Details Area =================-->

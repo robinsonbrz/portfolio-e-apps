@@ -6,8 +6,6 @@ from django.shortcuts import redirect, render
 
 from accounts.models import FormContato
 
-# Create your views here.
-
 
 def lista_login(request):
     if request.method != 'POST':

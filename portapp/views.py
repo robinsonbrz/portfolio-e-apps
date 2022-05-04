@@ -39,8 +39,10 @@ def portfolio_detail(request, slug):
     '''
     # print(f"{slug}\n\n\n\n\n\n\n\nPort detail")
 
-    return render(request, 'portapp/portfolio-details.html', {'aplicativo': aplicativo,    # noqa E502
-                                                             'aplicativos': aplicativos})  # noqa E502
+    return render(request, 'portapp/portfolio-details.html', 
+            {'aplicativo': aplicativo,    # noqa E502
+            'aplicativos': aplicativos}
+        )  # noqa E502
 
 
 def contato(request):

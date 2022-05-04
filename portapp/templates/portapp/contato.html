@@ -3,26 +3,21 @@
 {%block titulo%}Contato{%endblock%}
 
 {%block conteudo%}
-    <!--================ Start Banner Area =================-->
-    <section class="banner_area">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container">
-                <div class="banner_content text-center">
-                    <h2>Contato</h2>
-                    <div class="page_link">
-                        <a href="{% url 'portapp:inicio' %}">Início</a>
-                        <a href="{% url 'portapp:contato' %}">Contato</a>
-                    </div>
-                </div>
+<!--================ Start Banner Area =================-->
+<section class="banner_area">
+   <div class="banner_inner d-flex align-items-center">
+      <div class="container">
+         <div class="banner_content text-center">
+            <h2>Contato</h2>
+            <div class="page_link">
+               <a href="{% url 'portapp:inicio' %}">Início</a>
+               <a href="{% url 'portapp:contato' %}">Contato</a>
             </div>
-        </div>
-    </section>
-    <!--================ End Banner Area =================-->
-    
-
-    {% include 'portapp/partials/_newsletter.html' %}
-
-
-    <!--================Contact Area =================-->
-
+         </div>
+      </div>
+   </div>
+</section>
+<!--================ End Banner Area =================-->
+{% include 'portapp/partials/_newsletter.html' %}
+<!--================Contact Area =================-->
 {%endblock conteudo%}

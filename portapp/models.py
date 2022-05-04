@@ -15,6 +15,7 @@ class PortfolioDetail(models.Model):
     detalhe = models.TextField()
     link_github = models.URLField(blank=True,
         default=None,)
+    link_como_texto = models.CharField(max_length=150,blank=True)
     link_demo = models.URLField(blank=True,
         default=None,)
     categoria_nome = models.ForeignKey(

@@ -1,43 +1,47 @@
 {% load static %}
 <!--================Footer Area =================-->
-<footer class="footer_area pb-4">
-   <div class="container">
+<footer class="footer pt-3  ">
+   <div class="container text-center">
       <div class="row justify-content-center">
          <div class="col-lg-12">
             <div class="footer_top flex-column">
                <div class="footer_logo mt-1">
                   <a href="{% url 'portapp:inicio' %}">
-                     <img src="{% static '/portapp/img/logo.png'%}" alt="">
+                     <img src="{% static 'portapp/img/logo.png'%}" alt="">
+
                   </a>
                   <br>
                   <a class="navbar-brand logo_h" href="{% url 'portapp:inicio' %}"><img
                         src="{% static '/portapp/img/faviconEnedino.svg'%}" style="width:40px" alt=""></a>
                </div>
                <div class="footer_social">
-                  <a class="btn btn-outline-light btn-floating mx-3 rounded-circle" href="{% url 'portapp:contato' %}"
+                  <a class="btn btn-link btn-floating m-3 rounded-circle" href="{% url 'portapp:contato' %}"
                      role="button"><i class="fab fa-google  fa-3x"></i></a>
-                  <a class="btn btn-outline-light btn-floating mx-3 rounded-circle"
-                     href="https://www.linkedin.com/in/robinsonbrz" target="_blank" role="button"><i
-                        class="fab fa-linkedin-in  fa-3x"></i></a>
-                  <a class="btn btn-outline-light btn-floating mx-3" href="https://github.com/robinsonbrz"
-                     target="_blank" role="button"><i class="fab fa-github fa-3x"></i></a>
+                  <a class="btn btn-link btn-floating m-3 rounded-circle" href="https://www.linkedin.com/in/robinsonbrz"
+                     target="_blank" role="button"><i class="fab fa-linkedin-in  fa-3x"></i></a>
+                  <a class="btn btn-link btn-floating m-3 rounded-circle icon-socials"
+                     href="https://github.com/robinsonbrz" target="_blank" role="button"><i
+                        class="fab fa-github fa-3x"></i></a>
                </div>
             </div>
          </div>
       </div>
    </div>
-   <div class="row text-center  pt-4" style="background-color: rgba(255, 255, 255, 0.1);">
-      <div class="col">
-         <span class="text-dark">
-            © 2022 Copyright:
-         </span>
-         <a class="text-dark font-weight-bold" href="https://www.enedino.com.br">
-            Robinson Enedino
-         </a>
-      </div>
-      <div class="col">
-         <a class="text-dark" href="https://www.djangoproject.com/" target="_blank">Powered by
-            Django</a>
+
+   <div class="p-3" style="background-color: rgba(0, 123, 255, 1)">
+      <div class="row text-center">
+         <div class="col">
+            <span class="text-light">
+               © 2022 Copyright:
+            </span>
+            <a class="text-light" href="https://www.enedino.com.br">
+               Robinson Enedino
+            </a>
+         </div>
+         <div class="col">
+            <a class="text-light" href="https://www.djangoproject.com/" target="_blank">Powered by
+               Django</a>
+         </div>
       </div>
    </div>
 </footer>

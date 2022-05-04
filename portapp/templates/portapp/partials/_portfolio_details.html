@@ -2,39 +2,80 @@
 
 <!--================Start Portfolio Details Area =================-->
 <section class="portfolio_details_area section_gap">
+
    <div class="container">
-      <div class="portfolio_details_inner">
-         <div class="row">
-            <div class="col-lg-6">
-               <div class="left_img">
-                  <img class="img-fluid" src="{{ aplicativo.img_portfolio.url }}" alt="">
-               </div>
+   <div class="row">
+
+
+      <div class="col-8 col-lg-4 mb-4">
+
+         <div class="card" >
+            <div class="card-header">
+               <h5 class="card-titletext-uppercase">{{ aplicativo.titulo}}</h5>
             </div>
-            <div class="offset-lg-1 col-lg-5">
-               <div class="portfolio_right_text mt-30">
-                  <h4 class="text-uppercase">{{ aplicativo.titulo}}</h4>
-                  <p>
-                     {{ aplicativo.descricao}}
-                  </p>
-                  <h5>Live Demo:</h5>
-                  <a class="nav-link" href="{{ aplicativo.link_demo|default:"#"}}">
-                     {{ aplicativo.link_demo | default:"Live demo em breve" }}</a>
-                  <br>
-                  <h5>
-                     {% if aplicativo.link_github %}
-                        Git Hub do Projeto:
-                     {% else %}
-                        Git Hub Robinson disponível:
-                     {% endif %}
-                  </h5>
-                  <a class="nav-link" href="{{ aplicativo.link_github|default:"https://github.com/robinsonbrz" }}">
-                     {{ aplicativo.link_github | default:"Git do projeto em breve" }}
-                  </a>
-               </div>
+            <div class="card-body">
+               <p class="card-text">{{ aplicativo.descricao}}</p>
+            </div>
+            <img class="card-img-top" src="{{ aplicativo.img_portfolio.url }}" alt="Card image cap">
+            <div class="card-footer text-muted">
+               Código fonte do aplicativo, e mais informações técnicas. <br>
+               {% if aplicativo.link_github %}
+               <a href="{{ aplicativo.link_github}}" class="btn btn-primary btn-lg active mt-3" role="button"
+                  aria-pressed="true">Repositório Git</a>
+               {% endif %}
             </div>
          </div>
-         {{ aplicativo.detalhe}}
       </div>
+
+
+
+
+
+
+      <div class="col-12 col-lg-8">
+         <div class="card">
+
+            <div class="card-body">
+               <h5 class="card-titletext-uppercase">{{ aplicativo.titulo}}</h5>
+               <p class="card-text">{{ aplicativo.detalhe}}</p>
+               <a href="{%url aplicativo.link_como_texto %}" class="btn btn-primary btn-lg active" role="button"
+                  aria-pressed="true">Demonstração</a>
+            </div>
+
+         </div>
+      </div>
+
+
+
+   </div>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    </div>
 </section>
 <!--================End Portfolio Details Area =================-->

@@ -3749,9 +3749,9 @@ h6 {
 
 .testi_item {
     padding: 50px 55px;
-    margin-bottom: 200px;
+    # margin-bottom: 200px;
     margin-left: 10px;
-    margin: 0px 10px 80px;
+    # margin: 0px 10px 80px;
     box-shadow: 0px 15px 30px 0px rgba(221, 221, 221, 0.3);
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
@@ -4091,8 +4091,7 @@ h6 {
     /* Footer Area css
   ============================================================================================ */
     .footer_area {
-        padding-top: 80px !important;
-        padding-bottom: 80px !important;
+
         background-image: none !important;
         background-color: #fcf8ff;
     }
@@ -4411,7 +4410,7 @@ h6 {
 }
 
 .footer_area {
-    padding: 40px 0;
+    
     position: relative;
 }
 
@@ -4428,7 +4427,7 @@ h6 {
 
 @media (max-width: 1024px) {
     .footer_area {
-        padding: 60px 0;
+      #  padding: 20px 0;
     }
 }
 
@@ -4445,7 +4444,7 @@ h6 {
 
 .footer_area .footer_social {
     text-align: center;
-    margin: 25px 0px 30px;
+    margin: 25px 0px 10px;
 }
 
 .footer_area .footer_social a {
@@ -4454,7 +4453,7 @@ h6 {
 
 .footer_area .footer_social a i {
     color: #788489;
-    font-size: 22px;
+    
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
     -o-transition: all 0.4s ease 0s;

@@ -14,7 +14,7 @@
                <h5 class="card-titletext-uppercase">{{ aplicativo.titulo}}</h5>
             </div>
             <div class="card-body">
-               <p class="card-text">{{ aplicativo.descricao}}</p>
+               <p class="card-text">{{ aplicativo.descricao|safe }}</p>
             </div>
             <img class="card-img-top" src="{{ aplicativo.img_portfolio.url }}" alt="Card image cap">
             <div class="card-footer text-muted">
@@ -37,7 +37,7 @@
 
             <div class="card-body">
                <h5 class="card-titletext-uppercase">{{ aplicativo.titulo}}</h5>
-               <p class="card-text">{{ aplicativo.detalhe}}</p>
+               <p class="card-text">{{ aplicativo.detalhe|safe }}</p>
                <a href="{%url aplicativo.link_como_texto %}" class="btn btn-primary btn-lg active" role="button"
                   aria-pressed="true">Demonstração</a>
             </div>

@@ -46,11 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
+    'django_summernote',
+
     'contatos.apps.ContatosConfig',
     'accounts.apps.AccountsConfig',
     'todoapp.apps.TodoappConfig',
     'portapp.apps.PortappConfig',
-    'django.contrib.postgres',
     'movierank.apps.MovierankConfig',
     'bootstrapform',
 ]
@@ -161,3 +163,6 @@ MESSAGE_TAGS = {
 
 
 MAX_UPLOAD_SIZE = "2621440"
+
+# caso dê problema nosummernote
+X_FRAME_OPTIONS = 'SAMEORIGIN'

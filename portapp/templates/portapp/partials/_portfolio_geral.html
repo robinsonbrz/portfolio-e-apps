@@ -29,12 +29,12 @@
                <div class="portfolio_box">
                   <div class="single_portfolio">
                      <a href="{{ aplicativo.get_absolute_url}}">
-                        <img class="img-fluid w-100"  src="{{ aplicativo.img_prev.url }}" alt="{{ aplicativo.titulo}}">
+                        <img class="img-fluid w-90"  src="{{ aplicativo.img_prev.url }}" alt="{{ aplicativo.titulo}}">
                      </a>
                   </div>
                   <div class="short_info">
                      <h4><a href="{{ aplicativo.get_absolute_url}}">{{ aplicativo.titulo}}</a></h4>
-                     <p>{{ aplicativo.descricao|safe }} </p>
+                     {{ aplicativo.descricao|safe }}
                   </div>
                </div>
             </div>

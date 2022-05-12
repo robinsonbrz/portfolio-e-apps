@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'todoapp.apps.TodoappConfig',
     'portapp.apps.PortappConfig',
     'movierank.apps.MovierankConfig',
+	'charts.apps.ChartsConfig',
     'bootstrapform',
 ]
 

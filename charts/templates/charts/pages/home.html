@@ -1,0 +1,129 @@
+{% extends 'charts/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="jumbotron jumbotron-fluid">
+   <div class="container text-center">
+      <h1 class="display-4">Cotação {{nome_moeda}}</h1>
+      <p class="lead mb-5">Cotação {{par_moedas}} - {{nome_moeda}} últimos {{qtd_dias}} dias.</p>
+      <hr class="mb-5">
+      <!--Search box form moedas e período  Início -->
+      <form action="{% url 'cotacoes:home'  %}">
+         <div class="form-row">
+            <div class="form-group col-md-4">
+               <select name="par_moedas_form" id="par_moedas_form" class="form-control">
+                  {% for par in pares %}
+                     <option value={{par.0}}>{{par.1}}</option>
+                  {% endfor %}
+               </select>
+            </div>
+            <div class="form-group col-md-4">
+               <select name="dias_form" id="dias_form" class="form-control">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="30">30</option>
+                        <option value="60" selected>60</option>
+                        <option value="90">90</option>
+                        <option value="120">120</option>
+                        <option value="180">180</option>
+               </select>
+            </div>
+            <div class=" col-md-4">
+               <button type="submit" class="btn btn-primary">Selecionar</button>
+            </div>
+         </div>
+      </form>
+      <!--Search box form moedas e período  Fim-->
+   </div>
+</div>
+
+
+   <!--  class oculta d-none
+      também diminuir altura
+   --> 
+   <div class="m-4">
+      <div class="row" >
+         <div class="col-md-9">
+            <div class="card">
+               <div class="card-body mb-5">
+                  <h5 class="card-title">{{nome_moeda}} - {{par_moedas}} /  {{qtd_dias}} dias</h5>
+                  
+                  <canvas id="myChart" ></canvas>
+                  <br>
+                  Exibição em Chart Js
+               </div>
+            </div>
+            <div class="card mt-4">
+               <div class="card-body">
+                  <h5 class="card-title">{{nome_moeda}} - {{par_moedas}} /  {{qtd_dias}} dias</h5>
+                  <div id="chart" >
+                  </div>
+                  Exibição em Apex Chart
+               </div>
+            </div>
+         </div>
+
+         <div class="col-md-3">
+            <!--Card cotação atual  Início -->
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">Cotação atual</h5>
+                  <p class="card-text"><b>{{par_moedas}}<br>{{nome_moeda}}</b></p>
+               </div>
+               <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><b>Compra:</b> R$ {{par_atual.bid}}<br><b>Venda :</b> R$ {{par_atual.ask}}</li>
+                  <li class="list-group-item"><b>Variação:</b> {{par_atual.pctChange}}%</li>
+                  <li class="list-group-item"><b>High:</b> R$ {{par_atual.high}}<br><b>Low :</b> R$ {{par_atual.low}}</li>
+                  <li class="list-group-item"> {{par_atual.create_date}}</li>
+               </ul>
+            </div>
+            <!--Card cotação atual  Fim -->            
+         </div>
+
+      </div>
+   </div>  
+
+<!--Table cotacoes Inicio --> 
+
+<div class="container m-5 text-center">
+   <h3>Tabela: cotação mais atual disponível na API</h3>
+   <table class="table table-striped table-bordered">
+      <thead
+         <tr>
+            <th scope="col">Moeda</th>
+            <th scope="col">Descrição Moeda</th>
+            <th scope="col">Comprador</th>
+            <th scope="col">Vendedor</th>
+            <th scope="col">Variação %</th>
+            <th scope="col">Data/Hora Cotação</th>
+         </tr>
+      </thead>
+      <tbody>
+            {% for par_atual in lista_todos_cot_atual %}
+            <tr>
+               <td>{{par_atual.code}}</td>
+               <td>{{par_atual.name}}</td>
+               <td>R$ {{par_atual.bid|floatformat:2 }}</td>
+               <td>R$ {{par_atual.ask|floatformat:2 }}</td>
+               <td>{{par_atual.pctChange|floatformat:2 }}%</td>
+               <td>{{par_atual.create_date}}</td>
+            </tr>
+            {% endfor %}
+         </tbody>
+   </table>
+
+
+</div>
+
+<!--Table cotacoes Fim --> 
+   <script>
+      var lista_datas ={{ lista_datas | safe }};
+      var lista_cotacoes ={{ lista_cotacoes | safe }};
+   </script>
+   <script src="{% static 'charts/js/chart_cotacoes.js' %}">
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+{% endblock %}

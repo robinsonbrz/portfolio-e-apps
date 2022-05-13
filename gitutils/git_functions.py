@@ -50,8 +50,8 @@ def push_batch(comentario_commmit):
     comando = "git rebase " + str(nome_branch_atual)
     os.system(comando)
 
-    # comando = "git push"
-    # os.system(comando)
+    comando = "git push"
+    os.system(comando)
 
     comando = "git push app_bare_websrv main"
     os.system(comando)

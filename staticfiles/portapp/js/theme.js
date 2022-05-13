@@ -1,9 +1,8 @@
 (function ($) {
     'use strict';
 
-
     /*-------------------------------------------------------------------------------
-      Navbar seleciona qual deve ser o nav class active - Robinson 03-03-2022
+    Navbar seleciona qual deve ser o nav class active - Robinson 03-03-2022
     -------------------------------------------------------------------------------*/
     $(".nav-item").each(function () {
         // varre itens de nav e remove a classe active
@@ -23,7 +22,7 @@
 
     var nav_offset_top = $('header').height() + 50;
     /*-------------------------------------------------------------------------------
-      Navbar 
+    Navbar 
     -------------------------------------------------------------------------------*/
 
     //* Navbar Fixed
@@ -310,9 +309,6 @@
     })
     // Somente em todo app  #######################
 
-
-
-
     // validação de e-mail validate #######################
     //Guarda o form em uma variável
     var form = $("#contactForm");
@@ -362,9 +358,6 @@
     })
     // validação de e-mail validate #######################
 
-
-
-
     // envio de email ajax form inicial #######################
     $('#contactForm').on('submit', function (event) {
         event.preventDefault();
@@ -398,7 +391,6 @@
                 message: message,
                 g_recaptcha_response: captcha_response,
                 csrfmiddlewaretoken: $('input[name = csrfmiddlewaretoken]').val(),
-
             }, // data sent with the post request
             // handle a successful response
 
@@ -407,14 +399,12 @@
                 $("#alert-email").addClass("alert-success").removeClass("d-none").removeClass("alert-danger")
                 $("#alert-email").html("Muito obrigado <b>" + nome + "</b> !<br>Breve você receberá uma resposta em: " + email + ".");
 
-
                 alert("Obrigado " + nome + "! Sua mensagem foi enviada!");
 
                 $('#name').val(''); // remove the value from the input
                 $('#email').val('');
                 $('#subject').val('');
                 $('#message').val('');
-
             },
 
             // handle a non-successful response
@@ -424,22 +414,8 @@
 
                 console.log("Erro apresentado: " + err);
                 console.log("Erro apresentado: " + errmsg);
-
-
             }
         });
-
-
-
-
-
-
     };
-
-
     // envio de email ajax #######################
-
-
-
-
 })(jQuery);

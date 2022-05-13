@@ -21,20 +21,32 @@
          </ul>
       </div>
 
+      <style>
+         ul {
+            list-style-type: none;
+            padding-inline-start:15px;
+         }
+         img.img-fluid   {
+            border-radius: 20px;
+         }
+      </style>
+
       <div class="filters-content">
          <div class="row portfolio-grid justify-content-center">
             {% for aplicativo in aplicativos %}
 
-            <div class="col-lg-4 col-md-6  all python jquery javascript bootstrap django">
+            <div class="col-lg-4 col-md-6 mb-3 all python jquery javascript bootstrap django">
                <div class="portfolio_box">
-                  <div class="single_portfolio">
+                  <div class="single_portfolio text-center">
                      <a href="{{ aplicativo.get_absolute_url}}">
                         <img class="img-fluid w-90"  src="{{ aplicativo.img_prev.url }}" alt="{{ aplicativo.titulo}}">
                      </a>
                   </div>
                   <div class="short_info">
-                     <h4><a href="{{ aplicativo.get_absolute_url}}">{{ aplicativo.titulo}}</a></h4>
-                     {{ aplicativo.descricao|safe }}
+                     <h4  class="text-center"><a href="{{ aplicativo.get_absolute_url}}">{{ aplicativo.titulo}}</a></h4>
+                     <div class="mx-3 justify-content-start">
+                        {{ aplicativo.descricao|safe }}
+                     </div>
                   </div>
                </div>
             </div>

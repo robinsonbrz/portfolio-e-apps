@@ -10,5 +10,4 @@ urlpatterns = [
     # path('', views.home, name='home'),
     path('', views.home, name='home'),
     # path('delta/<par_moedas>/<int:dias>', views.home, name='home'),
-
-]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+]

@@ -111,3 +111,4 @@ def envia_email(name, email_contato, subject, message):
     # Login Credentials for sending the mail
     s.login(msg['From'], GMAIL_PASSWORD)
     s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
+    return

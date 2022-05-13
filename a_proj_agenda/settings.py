@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'todoapp.apps.TodoappConfig',
     'portapp.apps.PortappConfig',
     'movierank.apps.MovierankConfig',
-	'charts.apps.ChartsConfig',
+    'charts.apps.ChartsConfig',
     'bootstrapform',
 ]
 
@@ -142,7 +142,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')   # https://www.youtube.com/watch?v=QTb5fK1SiFU
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'

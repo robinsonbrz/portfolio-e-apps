@@ -30,3 +30,12 @@ class PortfolioDetail(models.Model):
 
     def get_absolute_url(self):
         return reverse('portapp:portfolio_detail',  args=[self.slug])
+
+
+class Testemunhos(models.Model):
+    testemunha_nome = models.CharField(max_length=250)
+    titulo = models.CharField(max_length=250)
+    testemunho = models.TextField(max_length=700)
+    img_prev = models.ImageField(
+        upload_to='portapp/img/', blank=True, default='portapp/img/img-placeholder.jpg')
+

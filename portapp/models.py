@@ -33,8 +33,8 @@ class PortfolioDetail(models.Model):
 
 
 class Testemunhos(models.Model):
-    testemunha_nome = models.CharField(max_length=250)
-    titulo = models.CharField(max_length=250)
+    testemunho_nome = models.CharField(max_length=250)
+    titulo = models.CharField(max_length=250,blank=True)
     testemunho = models.TextField(max_length=700)
     img_prev = models.ImageField(
         upload_to='portapp/img/', blank=True, default='portapp/img/img-placeholder.jpg')

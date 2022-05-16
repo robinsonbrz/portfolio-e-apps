@@ -13,7 +13,7 @@ class PortDetailAdmin(SummernoteModelAdmin):
 
 @admin.register(Testemunhos)
 class TestemunhosAdmin(admin.ModelAdmin):
-    list_display = ('testemunha_nome', 'titulo')
+    list_display = ('testemunho_nome', 'titulo')
 
 
 # As duas linha abaixo cumprem a mesma tarefa ou decorator ou declarativa

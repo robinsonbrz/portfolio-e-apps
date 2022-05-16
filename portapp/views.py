@@ -7,14 +7,18 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from dotenv import load_dotenv
 
-from .models import PortfolioDetail
+from .models import PortfolioDetail, Testemunhos
 
 load_dotenv()
 
 
 def inicio(request):
     aplicativos = PortfolioDetail.objects.all()
-    return render(request, 'portapp/index.html', {'aplicativos': aplicativos})
+    testemunhos = Testemunhos.objects.all()
+    return render(request, 'portapp/index.html', 
+                {   'aplicativos': aplicativos,
+                    'testemunhos': testemunhos,   
+                })
 
 
 def about(request):

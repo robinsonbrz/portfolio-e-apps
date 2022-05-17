@@ -13,11 +13,9 @@ class PortfolioDetail(models.Model):
     slug = models.SlugField(max_length=250, unique=True)
     descricao = models.TextField(max_length=700)
     detalhe = models.TextField()
-    link_github = models.URLField(blank=True,
-        default=None,)
-    link_como_texto = models.CharField(max_length=150,blank=True)
-    link_demo = models.URLField(blank=True,
-        default=None,)
+    link_github = models.URLField(blank=True, default=None,)
+    link_como_texto = models.CharField(max_length=150, blank=True)
+    link_demo = models.URLField(blank=True, default=None,)
     categoria_nome = models.ForeignKey(
         Categoria, on_delete=models.SET_NULL, null=True, blank=True,
         default=None,
@@ -29,13 +27,12 @@ class PortfolioDetail(models.Model):
         upload_to='portapp/img/', blank=True, default='portapp/img/img-placeholder.jpg')
 
     def get_absolute_url(self):
-        return reverse('portapp:portfolio_detail',  args=[self.slug])
+        return reverse('portapp:portfolio_detail', args=[self.slug])
 
 
 class Testemunhos(models.Model):
     testemunho_nome = models.CharField(max_length=250)
-    titulo = models.CharField(max_length=250,blank=True)
+    titulo = models.CharField(max_length=250, blank=True)
     testemunho = models.TextField(max_length=700)
     img_prev = models.ImageField(
         upload_to='portapp/img/', blank=True, default='portapp/img/img-placeholder.jpg')
-

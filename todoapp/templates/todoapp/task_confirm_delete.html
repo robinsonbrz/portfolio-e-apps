@@ -2,15 +2,15 @@
 {% block content %}
 
 <div class="header-bar">
-    <a href="{% url 'todoapp:tasks' %}">&#8592; Voltar</a>
+   <a href="{% url 'todoapp:tasks' %}">&#8592; Voltar</a>
 </div>
 
 <div class="card-body">
-    <form method="POST">
-        {% csrf_token %}
-        <p>Deseja mesmo deletar? <b>"{{task}}"</b> </p>
-        <input class="button" type="submit" value="Delete" />
-    </form>
+   <form method="POST">
+      {% csrf_token %}
+      <p>Deseja mesmo deletar? <b>"{{task}}"</b> </p>
+      <input class="button" type="submit" value="Delete" />
+   </form>
 </div>
 
 

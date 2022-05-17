@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.db import transaction
 # Create your views here.
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 # Imports for Reordering Feature
 from django.views import View
@@ -40,6 +40,7 @@ class RegisterPage(FormView):
         if user is not None:
             login(self.request, user)
         return super(RegisterPage, self).form_valid(form)
+
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
@@ -98,6 +99,7 @@ class DeleteView(LoginRequiredMixin, DeleteView):
     context_object_name = 'task'
     success_url = reverse_lazy('todoapp:tasks')
 
+
     def get_queryset(self):
         owner = self.request.user
         return self.model.objects.filter(user=owner)
@@ -106,11 +108,8 @@ class DeleteView(LoginRequiredMixin, DeleteView):
 class TaskReorder(View):
     def post(self, request):
         form = PositionForm(request.POST)
-
         if form.is_valid():
             positionList = form.cleaned_data["position"].split(',')
-
             with transaction.atomic():
                 self.request.user.set_task_order(positionList)
-
         return redirect(reverse_lazy('todoapp:tasks'))

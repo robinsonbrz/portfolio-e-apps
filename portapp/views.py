@@ -15,10 +15,7 @@ load_dotenv()
 def inicio(request):
     aplicativos = PortfolioDetail.objects.all()
     testemunhos = Testemunhos.objects.all()
-    return render(request, 'portapp/index.html', 
-                {   'aplicativos': aplicativos,
-                    'testemunhos': testemunhos,   
-                })
+    return render(request, 'portapp/index.html', {'aplicativos': aplicativos, 'testemunhos': testemunhos})
 
 
 def about(request):
@@ -38,15 +35,7 @@ def portfolio(request):
 def portfolio_detail(request, slug):
     aplicativos = PortfolioDetail.objects.all()
     aplicativo  = get_object_or_404(PortfolioDetail, slug=slug)
-    '''
-    print(aplicativo)
-    '''
-    # print(f"{slug}\n\n\n\n\n\n\n\nPort detail")
-
-    return render(request, 'portapp/portfolio-details.html', 
-            {'aplicativo': aplicativo,    # noqa E502
-            'aplicativos': aplicativos}
-        )  # noqa E502
+    return render(request, 'portapp/portfolio-details.html', {'aplicativo': aplicativo, 'aplicativos': aplicativos})
 
 
 def contato(request):

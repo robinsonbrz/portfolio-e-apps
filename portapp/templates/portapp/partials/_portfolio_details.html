@@ -42,7 +42,11 @@
             <div class="card-body">
                <h5 class="card-titletext-uppercase">{{ aplicativo.titulo}}</h5>
                <p class="card-text">{{ aplicativo.detalhe|safe }}</p>
-               <a href="{%url aplicativo.link_como_texto %}" class="btn btn-primary btn-lg active float-right" role="button"
+               {% if 'http' in aplicativo.link_como_texto %}
+                     <a  href="{{aplicativo.link_como_texto}}"
+                  {% else %}
+                     <a  href="{% url aplicativo.link_como_texto %}"
+                  {% endif %}  class="btn btn-primary btn-lg active float-right" role="button"
                   aria-pressed="true">Demonstração</a>
             </div>
 

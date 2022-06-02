@@ -19,11 +19,13 @@ def inicio(request):
 
 
 def about(request):
-    return render(request, 'portapp/about.html')
+    testemunhos = Testemunhos.objects.all()
+    return render(request, 'portapp/about.html', { 'testemunhos': testemunhos})
 
 
 def expertise(request):
-    return render(request, 'portapp/expertise.html')
+    testemunhos = Testemunhos.objects.all()
+    return render(request, 'portapp/expertise.html', { 'testemunhos': testemunhos})
 
 
 def portfolio(request):
